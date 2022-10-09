@@ -74,11 +74,73 @@ hduser@localhost:~$ hdfs dfs -cat ppkm.out-scala/part-r-00000 | head -11
 
 # Перепишите WordCount на Scala (2 балла)
 
+```shell
+$ cd wordcount-2
+$ git checkout b823eedc8dccfa8ed99b120dc245fc8bc6c7a808
+$ sbt assembly
+$ docker cp ./**/wordcount-2-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
+```
 
+```shell
+hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-v2
+hduser@localhost:~$ hadoop jar wordcount-2-assembly-0.1.0-SNAPSHOT.jar\
+  -Dwordcount.input=ppkm/ppkm_dataset.csv -Dwordcount.output=ppkm.out-v2
+hduser@localhost:~$ hdfs dfs -tail ppkm.out-v2/part-r-00000 | tail -10
+sm  1
+to  1
+tp  3
+tu  1
+w 1
+wi  1
+y 1
+ya  6
+yg  56
+| 1
+```
 
 # Измените маппер в WordCount так, чтобы он удалял знаки препинания и приводил все слова к единому регистру (Java: 1 балл, Scala: 2 балла)
 
+```shell
+$ cd wordcount-2
+$ git checkout c4ac8f2432e2e70d5adcd284a9696121c3221669
+$ sbt assembly
+$ docker cp ./**/wordcount-2-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
+```
 
+```shell
+hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-v2
+hduser@localhost:~$ hadoop jar wordcount-2-assembly-0.1.0-SNAPSHOT.jar\
+  -Dwordcount.input=ppkm/ppkm_dataset.csv -Dwordcount.output=ppkm.out-v2
+hduser@localhost:~$ hdfs dfs -tail ppkm.out-v2/part-r-00000 | tail -10
+t 84
+to  1
+tp  4
+tu  1
+w 1
+wh  1
+wi  1
+y 1
+ya  13
+yg  60
+```
 
 
 # На кластере лежит датасет, в котором ключами является id сотрудника и дата, а значением размер выплаты. Руководитель поставил задачу рассчитать среднюю сумму выплат по каждому сотруднику за последний месяц. В маппере вы отфильтровали старые записи и отдали ключ-значение вида: id-money. А в редьюсере суммировали все входящие числа и поделили результат на их количество. Но вам в голову пришла идея оптимизировать расчет, поставив этот же редьюсер и в качестве комбинатора, тем самым уменьшив шафл данных. Можете ли вы так сделать? Если да, то где можно было допустить ошибку? Если нет, то что должно быть на выходе комбинатора? (2 балла)
+
+Нельзя просто так использовать редьюсер, вычисляющий среднее в качестве комбинатора, так как должно выполняться свойство
+
+$$ \operatorname{mean}\left( \operatorname{mean}(a_1,\dotsc,a_n),\dotsc,\operatorname{mean}(z_1,\dotsc,z_n)\right) = \operatorname{mean}(a_1,\dotsc,a_n,\dotsc,z_1,\dotsc,z_n)
+$$
+
+Но оно, очевидно, не выполняется:
+
+$$
+  \frac {\frac {1 + 2} 2 + 3} 2 = 2.25\quad
+  \frac {1 + 2 + 3} 3 = 2
+$$
+
+Для обеспечения корректной работы на выходе комбинатора должно быть не одно число, а два: среднее и количество или сумма и количество:
+
+$$
+(\var{sum}_1, \var{count}_1),\ (\var{sum}_2, \var{count}_2) → (\var{sum}_1 + \var{sum}_2, \var{count}_1 + \var{count}_2)
+$$

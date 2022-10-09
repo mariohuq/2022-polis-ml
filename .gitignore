@@ -1,0 +1,35 @@
+# Ignore everything
+*
+
+# But not Gitignore files...
+!.gitignore
+
+# ...and not docs
+!*.md
+
+# ...and not report files
+!*.pdf
+
+# ...and not source images
+!img/*.png
+
+# ... and not java src
+!*.java
+!*.gradle
+# and not Gradle Wrapper stuff
+!gradle-wrapper*
+!gradlew
+!gradlew.bat
+
+# ... and not scala src
+!*.scala
+!*.sbt
+
+# ... and not python src
+!*.py
+
+!*/
+
+# but if it's IDEA...
+target/
+.idea/

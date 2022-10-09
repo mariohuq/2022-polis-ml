@@ -3,6 +3,8 @@ author: Кондраев Дмитрий
 title: ДЗ 2
 ---
 
+Исходники см. в репозитории <https://github.com/mariohuq/2022-polis-ml>.
+
 # Приведите пример Map only и Reduce задачи. (1 балл)
 
 Пример Map-only задачи --- поменять порядок колонок в дата-сете, добавить новую колонку по заранее известному правилу, зависящему только от текущей строки.
@@ -15,7 +17,7 @@ Reduce-only --- подсчет общего количества входных 
 
 # Разверните кластер hadoop, соберите WordCount приложение, запустите на датасете ppkm_sentiment и выведите 10 самых редких слов (1 балл)
 
-Старт контейнера
+Старт контейнера (созданного в предыдущем ДЗ)
 
 ```shell
 $ systemctl start docker.service
@@ -42,7 +44,7 @@ hduser@localhost:~$ hadoop jar wordcount-1.0-SNAPSHOT.jar ok.ml.WordCount\
 Сборка и копирование Jar с wordswap Job (версия на Scala):
 
 ```shell
-$ cd scala-wordswap
+$ cd 02-mapreduce/wordswap
 $ sbt assembly
 $ docker cp ./**/wordswap-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
 ```
@@ -74,12 +76,16 @@ hduser@localhost:~$ hdfs dfs -cat ppkm.out-scala/part-r-00000 | head -11
 
 # Перепишите WordCount на Scala (2 балла)
 
+Сборка решения на Scala:
+
 ```shell
 $ cd wordcount-2
 $ git checkout b823eedc8dccfa8ed99b120dc245fc8bc6c7a808
 $ sbt assembly
 $ docker cp ./**/wordcount-2-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
 ```
+
+Запуск и проверка:
 
 ```shell
 hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-v2
@@ -100,12 +106,16 @@ yg  56
 
 # Измените маппер в WordCount так, чтобы он удалял знаки препинания и приводил все слова к единому регистру (Java: 1 балл, Scala: 2 балла)
 
+Решение на Scala:
+
 ```shell
 $ cd wordcount-2
 $ git checkout c4ac8f2432e2e70d5adcd284a9696121c3221669
 $ sbt assembly
 $ docker cp ./**/wordcount-2-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
 ```
+
+Результат:
 
 ```shell
 hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-v2

@@ -14,7 +14,7 @@ class Tokenizer extends Mapper[Object, Text, Text, IntWritable] {
   val text = new Text()
 
   override def map(key: Object, value: Text, context: Mapper[Object, Text, Text, IntWritable]#Context): Unit = {
-    for (word <- value.toString.trim.toLowerCase.split("\\s")) {
+    for (word <- value.toString.trim.toLowerCase.split("(\\s|\\p{Punct})+")) {
       text.set(word)
       context.write(text, one)
     }

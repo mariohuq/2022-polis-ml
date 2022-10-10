@@ -3,7 +3,7 @@ author: Кондраев Дмитрий
 title: ДЗ 2
 ---
 
-Исходники см. в репозитории <https://github.com/mariohuq/2022-polis-ml>.
+Исходники см. в репозитории <https://github.com/mariohuq/2022-polis-ml>. `git checkout` выполняется в нем.
 
 # Приведите пример Map only и Reduce задачи. (1 балл)
 

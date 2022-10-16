@@ -5,12 +5,13 @@ import org.apache.spark.rdd.RDD
 
 object WordCount {
   def main(args: Array[String]): Unit = {
-    def wordCount(lines: RDD[String]): RDD[(Int, String)] = lines
+    def wordCount(lines: RDD[String]): RDD[String] = lines
       .flatMap(_.split("""(\s|\p{Punct})+"""))
       .map(word => (word.toLowerCase, 1))
       .reduceByKey(_ + _)
       .map{ case (word, count) => (count, word) }
       .sortByKey()
+      .map{ case (count, word) => s"$count\t$word"}
 
     val Array(input, output) = args
     val sc = new SparkContext()

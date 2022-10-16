@@ -6,10 +6,8 @@ import org.apache.spark.rdd.RDD
 object WordCount {
   def main(args: Array[String]): Unit = {
     def wordCount(lines: RDD[String]): RDD[(String, Int)] = lines
-      .map(_.trim)
-      .filter(_.nonEmpty) // no empty input words
-      .flatMap(_.split("\\s"))
-      .map(word => (word, 1))
+      .flatMap(_.split("""(\s|\p{Punct})+"""))
+      .map(word => (word.toLowerCase, 1))
       .reduceByKey(_ + _)
       .sortBy { case (_, count) => count }
 

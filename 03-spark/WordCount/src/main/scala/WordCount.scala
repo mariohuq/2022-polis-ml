@@ -5,17 +5,22 @@ import org.apache.spark.rdd.RDD
 
 object WordCount {
   def main(args: Array[String]): Unit = {
-    def wordCount(lines: RDD[String]): RDD[String] = lines
+    def wordCount(lines: RDD[String], stopWords: Set[String]): RDD[String] = lines
       .flatMap(_.split("""(\s|\p{Punct})+"""))
-      .map(word => (word.toLowerCase, 1))
+      .map(_.toLowerCase)
+      .filter(!stopWords.contains(_))
+      .map(word => (word, 1))
       .reduceByKey(_ + _)
-      .map{ case (word, count) => (count, word) }
-      .sortByKey()
-      .map{ case (count, word) => s"$count\t$word"}
+      .sortBy{case (_, count) => count }
+      .map{ case (word, count) => s"$count\t$word"}
 
-    val Array(input, output) = args
+    val Array(input, output, stopList) = args
     val sc = new SparkContext()
-    wordCount(sc.textFile(input)).saveAsTextFile(output)
+    val stopWords = sc.textFile(stopList)
+      .map(_.toLowerCase)
+      .collect
+      .toSet
+    wordCount(sc.textFile(input), stopWords).saveAsTextFile(output)
     sc.stop()
   }
 }

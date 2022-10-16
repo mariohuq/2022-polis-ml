@@ -33,3 +33,7 @@
 # but if it's IDEA...
 target/
 .idea/
+
+# or presentations
+
+/presentations/

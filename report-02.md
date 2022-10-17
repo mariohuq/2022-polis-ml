@@ -17,6 +17,25 @@ Reduce-only --- подсчет общего количества входных 
 
 # Разверните кластер hadoop, соберите WordCount приложение, запустите на датасете ppkm_sentiment и выведите 10 самых редких слов (1 балл)
 
+<!-- 
+# python map reduce
+
+```shell
+$ docker cp mapper.py hdp:/home/hduser
+$ docker cp reducer2.py hdp:/home/hduser
+```
+
+```shell
+hduser@localhost:~$ hadoop jar ./hadoop/share/hadoop/tools/lib/hadoop-streaming-2.10.1.jar \
+    -D mapred.reduce.tasks=2 \
+    -files mapper.py,reducer2.py \
+    -mapper mapper.py \
+    -reducer reducer2.py \
+    -input ppkm \
+    -output ppkm.out
+```
+-->
+
 Старт контейнера (созданного в предыдущем ДЗ)
 
 ```bash

@@ -1,0 +1,342 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "sc.textFile(\"tweets/Company.csv\").first",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-16T23:37:30+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 11,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres12\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = ticker_symbol,company_name\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id=9",
+              "$$hashKey": "object:4613"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1665958489245_1615415811",
+      "id": "paragraph_1665958489245_1615415811",
+      "dateCreated": "2022-10-16T22:14:49+0000",
+      "dateStarted": "2022-10-16T23:37:30+0000",
+      "dateFinished": "2022-10-16T23:37:30+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:347"
+    },
+    {
+      "text": "val rdd = sc.textFile(\"tweets/Company.csv\").mapPartitionsWithIndex {\n    case (0, iter) => iter.drop(1)\n    case (_, iter) => iter\n}.map { row => row.split(\",\") match { case Array(symbol, name) => (symbol, name) } }\nval companies = sc.broadcast(rdd.collect.toMap)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-16T23:23:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 11,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mrdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, String)]\u001b[0m = MapPartitionsRDD[3] at map at <console>:28\n\u001b[1m\u001b[34mcompanies\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.broadcast.Broadcast[scala.collection.immutable.Map[String,String]]\u001b[0m = Broadcast(2)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id=0",
+              "$$hashKey": "object:854"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1665959089798_1537033285",
+      "id": "paragraph_1665959089798_1537033285",
+      "dateCreated": "2022-10-16T22:24:49+0000",
+      "dateStarted": "2022-10-16T23:23:39+0000",
+      "dateFinished": "2022-10-16T23:24:14+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:348"
+    },
+    {
+      "text": "sc.textFile(\"tweets/Company_Tweet.csv\").first",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-16T23:06:57+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 11,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres9\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = tweet_id,ticker_symbol\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id=4",
+              "$$hashKey": "object:596"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1665960808980_196042703",
+      "id": "paragraph_1665960808980_196042703",
+      "dateCreated": "2022-10-16T22:53:28+0000",
+      "dateStarted": "2022-10-16T23:06:57+0000",
+      "dateFinished": "2022-10-16T23:06:57+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:349"
+    },
+    {
+      "text": "// broadcast join\nval rdd = sc.textFile(\"tweets/Company_Tweet.csv\").mapPartitionsWithIndex {\n    case (0, iter) => iter.drop(1)\n    case (_, iter) => iter\n}\n.flatMap { row => row.split(\",\") match {\n    case Array(tweet_id, symbol) => companies.value.get(symbol).map(name =>(tweet_id, symbol, name)) }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-16T23:37:22+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 11,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mrdd\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[(String, String, String)]\u001b[0m = MapPartitionsRDD[11] at flatMap at <console>:31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1665961652353_1454709055",
+      "id": "paragraph_1665961652353_1454709055",
+      "dateCreated": "2022-10-16T23:07:32+0000",
+      "dateStarted": "2022-10-16T23:26:02+0000",
+      "dateFinished": "2022-10-16T23:26:03+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:350"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 11,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "tweet_id": "string",
+                      "ticker_symbol": "string",
+                      "company_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "tweet_id",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "ticker_symbol",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id=7",
+              "$$hashKey": "object:5689"
+            },
+            {
+              "jobUrl": "http://localhost:4040/jobs/job?id=8",
+              "$$hashKey": "object:5690"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1665961822106_1952465444",
+      "id": "paragraph_1665961822106_1952465444",
+      "dateCreated": "2022-10-16T23:10:22+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:351",
+      "text": "print(\"%table\\ntweet_id\\tticker_symbol\\tcompany_name\\n\"\n  + rdd.takeSample(true, 25)\n        .map { case (tweet_id, symbol, name) => s\"$tweet_id\\t$symbol\\t$name\" }\n        .mkString(\"\\n\")\n)",
+      "dateUpdated": "2022-10-16T23:39:16+0000",
+      "dateFinished": "2022-10-16T23:36:38+0000",
+      "dateStarted": "2022-10-16T23:36:33+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "tweet_id\tticker_symbol\tcompany_name\n1145068424655233026\tGOOGL\tGoogle Inc\n1042088134014640128\tTSLA\tTesla Inc\n902693623908761600\tAMZN\tAmazon.com\n756179657817485312\tGOOG\tGoogle Inc\n1118566580445765636\tAMZN\tAmazon.com\n1103770464172863515\tTSLA\tTesla Inc\n1103136574311710720\tTSLA\tTesla Inc\n1055255442472005632\tTSLA\tTesla Inc\n931937913021050886\tAAPL\tapple\n1077229363102400512\tGOOG\tGoogle Inc\n1108058122252369920\tGOOGL\tGoogle Inc\n895714874986201088\tTSLA\tTesla Inc\n925030317441687552\tAAPL\tapple\n919922864169672704\tTSLA\tTesla Inc\n720216498162114560\tTSLA\tTesla Inc\n800647227622432768\tAAPL\tapple\n958325688393719809\tAMZN\tAmazon.com\n655796160389451776\tAAPL\tapple\n992126203522945024\tMSFT\tMicrosoft\n777908550282600449\tAAPL\tapple\n1144255402999238656\tTSLA\tTesla Inc\n846740988811001856\tTSLA\tTesla Inc\n1016425371204386816\tTSLA\tTesla Inc\n740745977556934658\tGOOG\tGoogle Inc\n1187011924065767424\tMSFT\tMicrosoft"
+          }
+        ]
+      }
+    }
+  ],
+  "name": "Tweets",
+  "id": "2HGYJSQ3B",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Tweets"
+}

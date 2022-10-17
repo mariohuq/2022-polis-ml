@@ -7,7 +7,7 @@ title: ДЗ 1
 
 1. Установка Docker
 
-   ```shell
+   ```bash
    mhq@mhq-envy:~$ curl -s https://get.docker.com/ | sudo sh
    ```
 <!--
@@ -83,7 +83,7 @@ title: ДЗ 1
   
    Проверка:
    
-   ```shell
+   ```bash
    mhq@mhq-envy:~$ docker compose version
    Docker Compose version v2.10.2
    ```
@@ -92,7 +92,7 @@ title: ДЗ 1
 
    Docker-образ Hadoop распакован в директорию `$HADOOP_PATH`. Сборка образа:
    
-   ```shell
+   ```bash
    $ cd $HADOOP_PATH
    $ docker build -t img-hdp-hadoop .
    <OUTPUT TRIMMED FOR BREVITY>
@@ -263,13 +263,13 @@ $ docker system prune
 
 Копируем архив в ФС контейнера:
 
-```
+```bash
 mhq@mhq-envy:~/Downloads$ docker cp ppkm.zip hdp:/home/hduser/
 ```
 
 Распаковываем:
 
-```
+```bash
 hduser@localhost:~$ unzip ppkm.zip -d ppkm && rm ppkm.zip
 ppkm:  ppkm.zip
   inflating: ppkm/ppkm_dataset.csv   
@@ -281,19 +281,19 @@ hadoop  ppkm
 
 Копируем директорию `ppkm` в hdfs:
 
-```
+```bash
 hduser@localhost:~$ hdfs dfs -put ppkm /user/hduser/
 ```
 
 Даем полные права на файлы датасета всем пользователям:
 
-```
+```bash
 hduser@localhost:~$ hdfs dfs -chmod -R a+rwx /user/hduser/ppkm
 ```
 
 Проверяем:
 
-```
+```bash
 hduser@localhost:~$ hdfs dfs -ls /user/hduser/ppkm
 Found 3 items
 -rwxrwxrwx 1 hduser supergroup 43320 2022-09-30 17:37 /user/hduser/ppkm/ppkm_dataset.csv

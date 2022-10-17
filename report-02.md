@@ -19,14 +19,14 @@ Reduce-only --- подсчет общего количества входных 
 
 Старт контейнера (созданного в предыдущем ДЗ)
 
-```shell
+```bash
 $ systemctl start docker.service
 $ docker start hdp -i
 ```
 
 Сборка и копирование Jar с WordCount Job (версия на Java):
 
-```shell
+```bash
 $ cd 02-mapreduce/wordcount
 $ ./gradlew build
 $ docker cp ./**/wordcount-1.0-SNAPSHOT.jar hdp:/home/hduser/ 
@@ -35,7 +35,7 @@ $ cd ..
 
 Запуск первой задачи (подсчет слов):
 
-```shell
+```bash
 hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-java
 hduser@localhost:~$ hadoop jar wordcount-1.0-SNAPSHOT.jar ok.ml.WordCount\
   -Dwordcount.input=ppkm/ppkm_dataset.csv -Dwordcount.output=ppkm.out-java
@@ -43,7 +43,7 @@ hduser@localhost:~$ hadoop jar wordcount-1.0-SNAPSHOT.jar ok.ml.WordCount\
 
 Сборка и копирование Jar с wordswap Job (версия на Scala):
 
-```shell
+```bash
 $ cd 02-mapreduce/wordswap
 $ sbt assembly
 $ docker cp ./**/wordswap-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
@@ -51,7 +51,7 @@ $ docker cp ./**/wordswap-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
 
 Запуск второй задачи (меняет местами слово и количество повторений):
 
-```shell
+```bash
 hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-scala
 hduser@localhost:~$ hadoop jar wordswap-assembly-0.1.0-SNAPSHOT.jar\
   -Dswap.input=ppkm.out-java -Dswap.output=ppkm.out-scala
@@ -59,7 +59,7 @@ hduser@localhost:~$ hadoop jar wordswap-assembly-0.1.0-SNAPSHOT.jar\
 
 10 самых редких слов:
 
-```shell
+```bash
 hduser@localhost:~$ hdfs dfs -cat ppkm.out-scala/part-r-00000 | head -11
 1 ah
 1 bs
@@ -78,7 +78,7 @@ hduser@localhost:~$ hdfs dfs -cat ppkm.out-scala/part-r-00000 | head -11
 
 Сборка решения на Scala:
 
-```shell
+```bash
 $ cd wordcount-2
 $ git checkout b823eedc8dccfa8ed99b120dc245fc8bc6c7a808
 $ sbt assembly
@@ -87,7 +87,7 @@ $ docker cp ./**/wordcount-2-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
 
 Запуск и проверка:
 
-```shell
+```bash
 hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-v2
 hduser@localhost:~$ hadoop jar wordcount-2-assembly-0.1.0-SNAPSHOT.jar\
   -Dwordcount.input=ppkm/ppkm_dataset.csv -Dwordcount.output=ppkm.out-v2
@@ -108,7 +108,7 @@ yg  56
 
 Решение на Scala:
 
-```shell
+```bash
 $ cd wordcount-2
 $ git checkout c4ac8f2432e2e70d5adcd284a9696121c3221669
 $ sbt assembly
@@ -117,7 +117,7 @@ $ docker cp ./**/wordcount-2-assembly-0.1.0-SNAPSHOT.jar hdp:/home/hduser/
 
 Результат:
 
-```shell
+```bash
 hduser@localhost:~$ hdfs dfs -rm -r ppkm.out-v2
 hduser@localhost:~$ hadoop jar wordcount-2-assembly-0.1.0-SNAPSHOT.jar\
   -Dwordcount.input=ppkm/ppkm_dataset.csv -Dwordcount.output=ppkm.out-v2

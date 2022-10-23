@@ -47,7 +47,8 @@ $ cd kondraev-ml
     ```
     ```
     <output trimmed for brevity>
-    22/10/23 16:08:38 INFO yarn.Client: Application report for application_1666541178843_0001 (state: FINISHED)
+    22/10/23 16:08:38 INFO yarn.Client: Application report for
+     application_1666541178843_0001 (state: FINISHED)
     22/10/23 16:08:38 INFO yarn.Client: 
          client token: N/A
          diagnostics: N/A

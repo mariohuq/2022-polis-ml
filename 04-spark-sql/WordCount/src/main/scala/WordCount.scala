@@ -12,7 +12,9 @@ object WordCount {
       .select(split($"text", """(\s|\p{Punct})+""") as "words")
       .select(explode($"words") as "word")
       .select(lower($"word") as "word")
-      .groupBy($"word").count()
+      .groupBy($"word").count().as("count")
+      .select($"count", $"word")
+      .sort($"count".desc)
 
     val Array(input, output) = args
     wordCount(spark.read.option("header", "true").csv(input))

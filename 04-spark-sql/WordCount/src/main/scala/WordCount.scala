@@ -3,7 +3,7 @@ package ok.ml
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions._
 
-object Main {
+object WordCount {
   def main(args: Array[String]): Unit = {
     import spark.sqlContext.implicits._
 

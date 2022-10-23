@@ -1,4 +1,4 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "0.2.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.11.12" // since no spark core is on Maven for recent Scala version
                                       // AND spark is running on that specific version

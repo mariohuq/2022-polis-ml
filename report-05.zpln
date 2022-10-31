@@ -1,0 +1,1334 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%md\nКондраев Дмитрий\n\n## Установите Apache Zeppelin и настройте интеграцию с Apache Spark (1 балл)\n\n1. Старт контейнера, созданного в ДЗ-3:\n\n```bash\n$ systemctl start docker.service\n$ docker start -i zeppelin\n```\n\n## Скачайте датасет [Video Game Sales](https://www.kaggle.com/gregorut/videogamesales) (1 балл)\n\nВ текущей папке должен быть файл `kaggle.json`, полученный на странице `https://www.kaggle.com/$username/account`, где `$username` -- мой юзернейм в kaggle.\n\n```bash\n$ docker exec zeppelin mkdir /home/hduser/.kaggle\n$ docker cp kaggle.json zeppelin:/home/hduser/.kaggle\n$ docker exec zeppelin chmod 600 /home/hduser/.kaggle/kaggle.json\n```",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T15:18:56+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667229472907_1073926467",
+      "id": "paragraph_1667229472907_1073926467",
+      "dateCreated": "2022-10-31T15:17:52+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:17120",
+      "dateFinished": "2022-10-31T15:18:56+0000",
+      "dateStarted": "2022-10-31T15:18:56+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Кондраев Дмитрий</p>\n<h2>Установите Apache Zeppelin и настройте интеграцию с Apache Spark (1 балл)</h2>\n<ol>\n<li>Старт контейнера, созданного в ДЗ-3:</li>\n</ol>\n<pre><code class=\"language-bash\">$ systemctl start docker.service\n$ docker start -i zeppelin\n</code></pre>\n<h2>Скачайте датасет <a href=\"https://www.kaggle.com/gregorut/videogamesales\">Video Game Sales</a> (1 балл)</h2>\n<p>В текущей папке должен быть файл <code>kaggle.json</code>, полученный на странице <code>https://www.kaggle.com/$username/account</code>, где <code>$username</code> &ndash; мой юзернейм в kaggle.</p>\n<pre><code class=\"language-bash\">$ docker exec zeppelin mkdir /home/hduser/.kaggle\n$ docker cp kaggle.json zeppelin:/home/hduser/.kaggle\n$ docker exec zeppelin chmod 600 /home/hduser/.kaggle/kaggle.json\n</code></pre>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%sh\npip install kaggle",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T09:24:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Defaulting to user installation because normal site-packages is not writeable\nCollecting kaggle\n  Downloading kaggle-1.5.12.tar.gz (58 kB)\n  Preparing metadata (setup.py): started\n  Preparing metadata (setup.py): finished with status 'done'\nRequirement already satisfied: certifi in /usr/lib/python3/dist-packages (from kaggle) (2018.1.18)\nCollecting python-dateutil\n  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)\nCollecting python-slugify\n  Downloading python_slugify-6.1.2-py2.py3-none-any.whl (9.4 kB)\nRequirement already satisfied: requests in /usr/lib/python3/dist-packages (from kaggle) (2.18.4)\nRequirement already satisfied: six>=1.10 in /usr/lib/python3/dist-packages (from kaggle) (1.11.0)\nCollecting tqdm\n  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)\nRequirement already satisfied: urllib3 in /usr/lib/python3/dist-packages (from kaggle) (1.22)\nCollecting text-unidecode>=1.3\n  Downloading text_unidecode-1.3-py2.py3-none-any.whl (78 kB)\nCollecting importlib-resources\n  Downloading importlib_resources-5.4.0-py3-none-any.whl (28 kB)\nCollecting zipp>=3.1.0\n  Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)\nBuilding wheels for collected packages: kaggle\n  Building wheel for kaggle (setup.py): started\n  Building wheel for kaggle (setup.py): finished with status 'done'\n  Created wheel for kaggle: filename=kaggle-1.5.12-py3-none-any.whl size=73997 sha256=236560c4ac71e4ce19c28a2e304b38d33bf2b82673c3c2ba164708288ac4b38b\n  Stored in directory: /home/hduser/.cache/pip/wheels/77/47/e4/44a4ba1b7dfd53faaa35f59f1175e123b213ff401a8a56876b\nSuccessfully built kaggle\nInstalling collected packages: zipp, text-unidecode, importlib-resources, tqdm, python-slugify, python-dateutil, kaggle\nSuccessfully installed importlib-resources-5.4.0 kaggle-1.5.12 python-dateutil-2.8.2 python-slugify-6.1.2 text-unidecode-1.3 tqdm-4.64.1 zipp-3.6.0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667202668730_790703309",
+      "id": "paragraph_1667202668730_790703309",
+      "dateCreated": "2022-10-31T07:51:08+0000",
+      "dateStarted": "2022-10-31T07:54:02+0000",
+      "dateFinished": "2022-10-31T07:54:12+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:5442"
+    },
+    {
+      "text": "%python\nimport kaggle\napi = kaggle.api\napi.get_config_value(\"username\"), api.get_default_download_dir()",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T09:24:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "('mariohuq', '/home/hduser')\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667202842430_203884758",
+      "id": "paragraph_1667202842430_203884758",
+      "dateCreated": "2022-10-31T07:54:02+0000",
+      "dateStarted": "2022-10-31T07:56:46+0000",
+      "dateFinished": "2022-10-31T07:56:46+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5443"
+    },
+    {
+      "text": "%python\napi.dataset_download_files('gregorut/videogamesales', unzip=True)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T09:24:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667203135814_1907033533",
+      "id": "paragraph_1667203135814_1907033533",
+      "dateCreated": "2022-10-31T07:58:55+0000",
+      "dateStarted": "2022-10-31T08:00:00+0000",
+      "dateFinished": "2022-10-31T08:00:01+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5444"
+    },
+    {
+      "text": "%sh\nls vgsales.csv",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T09:24:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "vgsales.csv\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667203193260_783062196",
+      "id": "paragraph_1667203193260_783062196",
+      "dateCreated": "2022-10-31T07:59:53+0000",
+      "dateStarted": "2022-10-31T08:00:26+0000",
+      "dateFinished": "2022-10-31T08:00:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5445"
+    },
+    {
+      "text": "%sh\nhdfs dfs -put vgsales.csv /user/hduser",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T09:24:16+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667203212244_159886738",
+      "id": "paragraph_1667203212244_159886738",
+      "dateCreated": "2022-10-31T08:00:12+0000",
+      "dateStarted": "2022-10-31T08:02:26+0000",
+      "dateFinished": "2022-10-31T08:02:30+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5446"
+    },
+    {
+      "text": "%sh\nhdfs dfs -cat /user/hduser/vgsales.csv 2>/dev/null | head",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T15:17:27+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sh",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales\n1,Wii Sports,Wii,2006,Sports,Nintendo,41.49,29.02,3.77,8.46,82.74\n2,Super Mario Bros.,NES,1985,Platform,Nintendo,29.08,3.58,6.81,0.77,40.24\n3,Mario Kart Wii,Wii,2008,Racing,Nintendo,15.85,12.88,3.79,3.31,35.82\n4,Wii Sports Resort,Wii,2009,Sports,Nintendo,15.75,11.01,3.28,2.96,33\n5,Pokemon Red/Pokemon Blue,GB,1996,Role-Playing,Nintendo,11.27,8.89,10.22,1,31.37\n6,Tetris,GB,1989,Puzzle,Nintendo,23.2,2.26,4.22,0.58,30.26\n7,New Super Mario Bros.,DS,2006,Platform,Nintendo,11.38,9.23,6.5,2.9,30.01\n8,Wii Play,Wii,2006,Misc,Nintendo,14.03,9.2,2.93,2.85,29.02\n9,New Super Mario Bros. Wii,Wii,2009,Platform,Nintendo,14.59,7.06,4.7,2.26,28.62\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667203346544_1629124903",
+      "id": "paragraph_1667203346544_1629124903",
+      "dateCreated": "2022-10-31T08:02:26+0000",
+      "dateStarted": "2022-10-31T15:17:27+0000",
+      "dateFinished": "2022-10-31T15:17:30+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5447"
+    },
+    {
+      "text": "%spark.sql\ncreate temporary view vgsales\nusing csv \noptions (\n  path '/user/hduser/vgsales.csv',\n  header true,\n  inferSchema true\n);\nselect * from vgsales limit 1;",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T15:14:12+0000",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 94,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Rank": "string",
+                      "Name": "string",
+                      "Platform": "string",
+                      "Year": "string",
+                      "Genre": "string",
+                      "Publisher": "string",
+                      "NA_Sales": "string",
+                      "EU_Sales": "string",
+                      "JP_Sales": "string",
+                      "Other_Sales": "string",
+                      "Global_Sales": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Rank": "string",
+                      "Name": "string",
+                      "Platform": "string",
+                      "Year": "string",
+                      "Genre": "string",
+                      "Publisher": "string",
+                      "NA_Sales": "string",
+                      "EU_Sales": "string",
+                      "JP_Sales": "string",
+                      "Other_Sales": "string",
+                      "Global_Sales": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Rank\tName\tPlatform\tYear\tGenre\tPublisher\tNA_Sales\tEU_Sales\tJP_Sales\tOther_Sales\tGlobal_Sales\n1\tWii Sports\tWii\t2006\tSports\tNintendo\t41.49\t29.02\t3.77\t8.46\t82.74\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:16883"
+            },
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:16884"
+            },
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:16885"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667203404886_1705053004",
+      "id": "paragraph_1667203404886_1705053004",
+      "dateCreated": "2022-10-31T08:03:24+0000",
+      "dateStarted": "2022-10-31T14:24:52+0000",
+      "dateFinished": "2022-10-31T14:26:28+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5448"
+    },
+    {
+      "text": "%md\n## Выведите самую продаваемую игру за всё время (2 балла)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:44:11+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Выведите самую продаваемую игру за всё время (2 балла)</h2>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667209018374_485217388",
+      "id": "paragraph_1667209018374_485217388",
+      "dateCreated": "2022-10-31T09:36:58+0000",
+      "dateStarted": "2022-10-31T14:44:11+0000",
+      "dateFinished": "2022-10-31T14:44:11+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5449"
+    },
+    {
+      "text": "%spark.sql\nselect Name, Global_Sales\nfrom vgsales\norder by Global_Sales desc\nlimit 1;",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T09:39:05+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 84,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Name": "string",
+                      "Global_Sales": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Name": "string",
+                      "Overall_sales": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Name\tGlobal_Sales\nWii Sports\t82.74\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41853/jobs",
+              "$$hashKey": "object:6587"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667203826751_302292739",
+      "id": "paragraph_1667203826751_302292739",
+      "dateCreated": "2022-10-31T08:10:26+0000",
+      "dateStarted": "2022-10-31T09:38:56+0000",
+      "dateFinished": "2022-10-31T09:38:58+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5450"
+    },
+    {
+      "text": "%md\n## Какая платформа самая популярная в каждом регионе (NA, EU, JP)? (2 балла)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:44:16+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Какая платформа самая популярная в каждом регионе (NA, EU, JP)? (2 балла)</h2>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667208987482_2142988531",
+      "id": "paragraph_1667208987482_2142988531",
+      "dateCreated": "2022-10-31T09:36:27+0000",
+      "dateStarted": "2022-10-31T14:44:16+0000",
+      "dateFinished": "2022-10-31T14:44:16+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5451"
+    },
+    {
+      "text": "%spark.sql\nselect \"NA\" as Region, Platform as Most_Popular_Platform\nfrom (select\n        Platform, \n        sum(NA_Sales) as NA_Sales\n    from vgsales\n    group by Platform\n    order by NA_Sales desc\n    limit 1\n) union all\nselect \"EU\" as Region, Platform as Most_Popular_Platform\nfrom (select\n        Platform, \n        sum(EU_Sales) as EU_Sales\n    from vgsales\n    group by Platform\n    order by EU_Sales desc\n    limit 1\n) union all\nselect \"JP\" as Region, Platform as Most_Popular_Platform\nfrom (select\n        Platform, \n        sum(JP_Sales) as JP_Sales\n    from vgsales\n    group by Platform\n    order by JP_Sales desc\n    limit 1\n)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:42:48+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 144,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Region": "string",
+                      "Most_Popular_Platform": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Platform": "string",
+                      "NA_Sales": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Region\tMost_Popular_Platform\nNA\tX360\nEU\tPS3\nJP\tDS\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:9018"
+            },
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:9019"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667213316559_270245487",
+      "id": "paragraph_1667213316559_270245487",
+      "dateCreated": "2022-10-31T10:48:36+0000",
+      "dateStarted": "2022-10-31T14:37:34+0000",
+      "dateFinished": "2022-10-31T14:37:57+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5452"
+    },
+    {
+      "text": "%md\nВ Spark 3.0.0 появилась функция `max_by`:",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T15:11:24+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>В Spark 3.0.0 появилась функция <code>max_by</code>:</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667227101567_1855980613",
+      "id": "paragraph_1667227101567_1855980613",
+      "dateCreated": "2022-10-31T14:38:21+0000",
+      "dateStarted": "2022-10-31T15:11:24+0000",
+      "dateFinished": "2022-10-31T15:11:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5453"
+    },
+    {
+      "text": "%spark.sql\nselect max_by(Platform, NA_Sales) as NA_best, \n       max_by(Platform, EU_Sales) as EU_best,\n       max_by(Platform, JP_Sales) as JP_best,\n       max_by(Platform, Other_Sales) as Other_best\nfrom (\n    select\n        Platform, \n        sum(NA_Sales) as NA_Sales, \n        sum(EU_Sales) as EU_Sales, \n        sum(JP_Sales) as JP_Sales, \n        sum(Other_Sales) as Other_Sales\n    from vgsales\n    group by Platform\n)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:44:26+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Undefined function: 'max_by'. This function is neither a registered temporary function nor a permanent function registered in the database 'default'.; line 2 pos 7"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667209185264_1622329851",
+      "id": "paragraph_1667209185264_1622329851",
+      "dateCreated": "2022-10-31T09:39:45+0000",
+      "dateStarted": "2022-10-31T14:44:26+0000",
+      "dateFinished": "2022-10-31T14:44:26+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:5454"
+    },
+    {
+      "text": "%md\n## Какой жанр популярен больше всего в каждом регионе (NA, EU, JP)? (2 балла)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:42:42+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Какой жанр популярен больше всего в каждом регионе (NA, EU, JP)? (2 балла)</h2>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667209174512_685037285",
+      "id": "paragraph_1667209174512_685037285",
+      "dateCreated": "2022-10-31T09:39:34+0000",
+      "dateStarted": "2022-10-31T14:42:42+0000",
+      "dateFinished": "2022-10-31T14:42:42+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5455"
+    },
+    {
+      "text": "%spark.sql\ncreate TEMPORARY VIEW genre_info AS (select\n    Genre, \n    sum(NA_Sales) as NA_Sales, \n    sum(EU_Sales) as EU_Sales, \n    sum(JP_Sales) as JP_Sales, \n    sum(Other_Sales) as Other_Sales\nfrom vgsales\ngroup by Genre);\nselect \"NA\" as Region, Genre as Most_Popular_Genre \nfrom (select\n        Genre, \n        sum(NA_Sales) as NA_Sales\n    from genre_info\n    group by Genre\n    order by NA_Sales desc\n    limit 1\n) union all\nselect \"EU\" as Region, Genre as Most_Popular_Genre \nfrom (select\n        Genre, \n        sum(EU_Sales) as EU_Sales\n    from genre_info\n    group by Genre\n    order by EU_Sales desc\n    limit 1\n) union all\nselect \"JP\" as Region, Genre as Most_Popular_Genre \nfrom (select\n        Genre, \n        sum(JP_Sales) as JP_Sales\n    from genre_info\n    group by Genre\n    order by JP_Sales desc\n    limit 1\n)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:42:02+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 118,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Region": "string",
+                      "Most_Popular_Genre": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Region\tMost_Popular_Genre\nNA\tAction\nEU\tAction\nJP\tRole-Playing\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:8817"
+            },
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:8818"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667213886267_467905867",
+      "id": "paragraph_1667213886267_467905867",
+      "dateCreated": "2022-10-31T10:58:06+0000",
+      "dateStarted": "2022-10-31T14:41:29+0000",
+      "dateFinished": "2022-10-31T14:41:45+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5456"
+    },
+    {
+      "text": "%md\nНо в spark 3 можно было бы ",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:42:35+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Но в spark 3 можно было бы</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667213759830_596497075",
+      "id": "paragraph_1667213759830_596497075",
+      "dateCreated": "2022-10-31T10:55:59+0000",
+      "dateStarted": "2022-10-31T14:42:35+0000",
+      "dateFinished": "2022-10-31T14:42:35+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5457"
+    },
+    {
+      "text": "%spark.sql\nselect max_by(Genre, NA_Sales) as NA_best, \n       max_by(Genre, EU_Sales) as EU_best,\n       max_by(Genre, JP_Sales) as JP_best,\n       max_by(Genre, Other_Sales) as Other_best\nfrom (select\n    Genre, \n    sum(NA_Sales) as NA_Sales, \n    sum(EU_Sales) as EU_Sales, \n    sum(JP_Sales) as JP_Sales, \n    sum(Other_Sales) as Other_Sales\nfrom vgsales\ngroup by Genre)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:44:34+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Undefined function: 'max_by'. This function is neither a registered temporary function nor a permanent function registered in the database 'default'.; line 2 pos 7"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667213711678_760639989",
+      "id": "paragraph_1667213711678_760639989",
+      "dateCreated": "2022-10-31T10:55:11+0000",
+      "dateStarted": "2022-10-31T14:44:34+0000",
+      "dateFinished": "2022-10-31T14:44:34+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:5458"
+    },
+    {
+      "text": "%md\n## Выведите самый популярный жанр на каждый год (2 балла)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:44:39+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Выведите самый популярный жанр на каждый год (2 балла)</h2>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667208392492_417470164",
+      "id": "paragraph_1667208392492_417470164",
+      "dateCreated": "2022-10-31T09:26:32+0000",
+      "dateStarted": "2022-10-31T14:44:39+0000",
+      "dateFinished": "2022-10-31T14:44:39+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5459"
+    },
+    {
+      "text": "%spark.sql\nselect Year, Genre as Most_Popular_Genre, round(Overall_sales, 2) as Overall_sales\nfrom (\n    select \n        Year,\n        Genre,\n        Overall_sales,\n        -- выведет несколько строк. если несколько самых популярных жанров имеют одинаковое число продаж (маловероятно)\n        dense_rank() over (partition by Year order by Overall_sales desc) my_rank\n    from (\n        select\n            Year, \n            Genre, \n            sum(Global_Sales) as Overall_sales\n        from vgsales\n        group by Year, Genre\n    )\n)\nwhere my_rank = 1\norder by Year",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T15:13:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Year": "string",
+                      "Most_Popular_Genre": "string",
+                      "Overall_sales": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "Year": "string",
+                      "Genre": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:38191/jobs",
+              "$$hashKey": "object:16254"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667214017233_1397761673",
+      "id": "paragraph_1667214017233_1397761673",
+      "dateCreated": "2022-10-31T11:00:17+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5460",
+      "dateFinished": "2022-10-31T15:13:45+0000",
+      "dateStarted": "2022-10-31T15:13:39+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "Year\tMost_Popular_Genre\tOverall_sales\n1980\tShooter\t7.07\n1981\tAction\t14.84\n1982\tPuzzle\t10.03\n1983\tPlatform\t6.93\n1984\tShooter\t31.1\n1985\tPlatform\t43.17\n1986\tAction\t13.74\n1987\tFighting\t5.42\n1988\tPlatform\t27.73\n1989\tPuzzle\t37.75\n1990\tPlatform\t22.97\n1991\tPlatform\t7.64\n1992\tFighting\t15.25\n1993\tPlatform\t18.67\n1994\tPlatform\t28.74\n1995\tPlatform\t16.69\n1996\tRole-Playing\t43.96\n1997\tRacing\t31.91\n1998\tSports\t41.79\n1999\tRole-Playing\t49.09\n2000\tSports\t41.19\n2001\tAction\t59.39\n2002\tAction\t86.77\n2003\tAction\t67.93\n2004\tAction\t76.26\n2005\tAction\t85.69\n2006\tSports\t136.16\n2007\tAction\t106.5\n2008\tAction\t136.39\n2009\tAction\t139.36\n2010\tAction\t117.64\n2011\tAction\t118.96\n2012\tAction\t122.04\n2013\tAction\t125.22\n2014\tAction\t99.02\n2015\tAction\t70.7\n2016\tAction\t19.91\n2017\tRole-Playing\t0.04\n2020\tSimulation\t0.29\nN/A\tAction\t28.3\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%md\nИли, с помощью `max_by` (нужен Spark 3.0.0+):",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:46:24+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667214037265_209608411",
+      "id": "paragraph_1667214037265_209608411",
+      "dateCreated": "2022-10-31T11:00:37+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:5461",
+      "dateFinished": "2022-10-31T14:46:24+0000",
+      "dateStarted": "2022-10-31T14:46:24+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Или, с помощью <code>max_by</code> (нужен Spark 3.0.0+):</p>\n\n</div>"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark.sql\nselect Year, max_by(Genre, overall_sales)\nfrom\n(select Year, Genre, sum(Global_Sales) as overall_sales\nfrom vgsales\ngroup by Year, Genre)\ngroup by Year",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-31T14:46:01+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Undefined function: 'max_by'. This function is neither a registered temporary function nor a permanent function registered in the database 'default'.; line 2 pos 13"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1667209162967_1249724810",
+      "id": "paragraph_1667209162967_1249724810",
+      "dateCreated": "2022-10-31T09:39:22+0000",
+      "dateStarted": "2022-10-31T14:46:01+0000",
+      "dateFinished": "2022-10-31T14:46:01+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:5462"
+    }
+  ],
+  "name": "Video Game Sales",
+  "id": "2HG416RSD",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Video Game Sales"
+}

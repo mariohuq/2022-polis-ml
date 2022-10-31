@@ -10,8 +10,8 @@ title: ДЗ 1
    ```bash
    mhq@mhq-envy:~$ curl -s https://get.docker.com/ | sudo sh
    ```
-<!--
-   # Executing docker install script, commit: 4f282167c425347a931ccfd95cc91fab041d414f
+
+<!--# Executing docker install script, commit: 4f282167c425347a931ccfd95cc91fab041d414f
    + sh -c apt-get update -qq >/dev/null
    + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null
    + sh -c mkdir -p /etc/apt/keyrings && chmod -R 0755 /etc/apt/keyrings
@@ -23,8 +23,7 @@ title: ДЗ 1
    + version_gte 20.10
    + [ -z  ]
    + return 0
-   + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce-rootless-extras >/dev/null
- -->
+   + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce-rootless-extras >/dev/null-->
    ```
    mhq@mhq-envy:~$ docker version
    [sudo] password for mhq: 
@@ -59,8 +58,7 @@ title: ДЗ 1
      Version:          0.19.0
      GitCommit:        de40ad0
    ```
-   <!--
-   ================================================================================
+   <!-- ================================================================================
    
    To run Docker as a non-privileged user, consider setting up the
    Docker daemon in rootless mode for your user:

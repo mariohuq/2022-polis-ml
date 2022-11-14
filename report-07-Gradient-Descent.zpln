@@ -1,0 +1,1363 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%md\nКондраев Дмитрий\n\n# Подготовительная работа",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:16:53+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Кондраев Дмитрий</p>\n<h1>Подготовительная работа</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668369580111_1939638414",
+      "id": "paragraph_1668369580111_1939638414",
+      "dateCreated": "2022-11-13T19:59:40+0000",
+      "dateStarted": "2022-11-14T15:16:53+0000",
+      "dateFinished": "2022-11-14T15:17:01+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:164"
+    },
+    {
+      "text": "// инициализация рандомайзера\nval rnd = new util.Random()",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:21:51+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mrnd\u001b[0m: \u001b[1m\u001b[32mscala.util.Random\u001b[0m = scala.util.Random@fd0f302\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668356350961_688717299",
+      "id": "paragraph_1668356350961_688717299",
+      "dateCreated": "2022-11-13T16:19:10+0000",
+      "dateStarted": "2022-11-14T15:21:51+0000",
+      "dateFinished": "2022-11-14T15:21:52+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:165"
+    },
+    {
+      "text": "// генерируем линейные данные с шумом\nval dataOriginal = Range(0, 100).map(x => Array(x.toDouble, 0.2 * x.toDouble + 500))\nval dataNoised = dataOriginal.map { case Array(x, y) => Array(x, y + rnd.nextGaussian()) }",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:21:52+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdataOriginal\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.IndexedSeq[Array[Double]]\u001b[0m = Vector(Array(0.0, 500.0), Array(1.0, 500.2), Array(2.0, 500.4), Array(3.0, 500.6), Array(4.0, 500.8), Array(5.0, 501.0), Array(6.0, 501.2), Array(7.0, 501.4), Array(8.0, 501.6), Array(9.0, 501.8), Array(10.0, 502.0), Array(11.0, 502.2), Array(12.0, 502.4), Array(13.0, 502.6), Array(14.0, 502.8), Array(15.0, 503.0), Array(16.0, 503.2), Array(17.0, 503.4), Array(18.0, 503.6), Array(19.0, 503.8), Array(20.0, 504.0), Array(21.0, 504.2), Array(22.0, 504.4), Array(23.0, 504.6), Array(24.0, 504.8), Array(25.0, 505.0), Array(26.0, 505.2), Array(27.0, 505.4), Array(28.0, 505.6), Array(29.0, 505.8), Array(30.0, 506.0), Array(31.0, 506.2), Array(32.0, 506.4), Array(33.0, 506.6), Array(34.0, 506.8), Array..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668356394955_369707379",
+      "id": "paragraph_1668356394955_369707379",
+      "dateCreated": "2022-11-13T16:19:54+0000",
+      "dateStarted": "2022-11-14T15:21:52+0000",
+      "dateFinished": "2022-11-14T15:21:57+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:166"
+    },
+    {
+      "text": "// визуализируем данные\nprintln(\"%table\")\nprintln(\"x\\ty\\tclz\")\ndataOriginal.foreach { case Array(x, y) => println(s\"$x\\t$y\\toriginal\") }\ndataNoised.foreach { case Array(x, y) => println(s\"$x\\t$y\\tnoised\") }",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:21:57+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "x": "string",
+                      "y": "string",
+                      "clz": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {},
+                "scatterChart": {
+                  "xAxis": {
+                    "name": "x",
+                    "index": 0,
+                    "aggr": "sum"
+                  },
+                  "yAxis": {
+                    "name": "y",
+                    "index": 1,
+                    "aggr": "sum"
+                  },
+                  "group": {
+                    "name": "clz",
+                    "index": 2,
+                    "aggr": "sum"
+                  }
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "x",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [
+                {
+                  "name": "clz",
+                  "index": 2,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "y",
+                  "index": 1
+                }
+              ]
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "x\ty\tclz\n0.0\t500.0\toriginal\n1.0\t500.2\toriginal\n2.0\t500.4\toriginal\n3.0\t500.6\toriginal\n4.0\t500.8\toriginal\n5.0\t501.0\toriginal\n6.0\t501.2\toriginal\n7.0\t501.4\toriginal\n8.0\t501.6\toriginal\n9.0\t501.8\toriginal\n10.0\t502.0\toriginal\n11.0\t502.2\toriginal\n12.0\t502.4\toriginal\n13.0\t502.6\toriginal\n14.0\t502.8\toriginal\n15.0\t503.0\toriginal\n16.0\t503.2\toriginal\n17.0\t503.4\toriginal\n18.0\t503.6\toriginal\n19.0\t503.8\toriginal\n20.0\t504.0\toriginal\n21.0\t504.2\toriginal\n22.0\t504.4\toriginal\n23.0\t504.6\toriginal\n24.0\t504.8\toriginal\n25.0\t505.0\toriginal\n26.0\t505.2\toriginal\n27.0\t505.4\toriginal\n28.0\t505.6\toriginal\n29.0\t505.8\toriginal\n30.0\t506.0\toriginal\n31.0\t506.2\toriginal\n32.0\t506.4\toriginal\n33.0\t506.6\toriginal\n34.0\t506.8\toriginal\n35.0\t507.0\toriginal\n36.0\t507.2\toriginal\n37.0\t507.4\toriginal\n38.0\t507.6\toriginal\n39.0\t507.8\toriginal\n40.0\t508.0\toriginal\n41.0\t508.2\toriginal\n42.0\t508.4\toriginal\n43.0\t508.6\toriginal\n44.0\t508.8\toriginal\n45.0\t509.0\toriginal\n46.0\t509.2\toriginal\n47.0\t509.4\toriginal\n48.0\t509.6\toriginal\n49.0\t509.8\toriginal\n50.0\t510.0\toriginal\n51.0\t510.2\toriginal\n52.0\t510.4\toriginal\n53.0\t510.6\toriginal\n54.0\t510.8\toriginal\n55.0\t511.0\toriginal\n56.0\t511.2\toriginal\n57.0\t511.4\toriginal\n58.0\t511.6\toriginal\n59.0\t511.8\toriginal\n60.0\t512.0\toriginal\n61.0\t512.2\toriginal\n62.0\t512.4\toriginal\n63.0\t512.6\toriginal\n64.0\t512.8\toriginal\n65.0\t513.0\toriginal\n66.0\t513.2\toriginal\n67.0\t513.4\toriginal\n68.0\t513.6\toriginal\n69.0\t513.8\toriginal\n70.0\t514.0\toriginal\n71.0\t514.2\toriginal\n72.0\t514.4\toriginal\n73.0\t514.6\toriginal\n74.0\t514.8\toriginal\n75.0\t515.0\toriginal\n76.0\t515.2\toriginal\n77.0\t515.4\toriginal\n78.0\t515.6\toriginal\n79.0\t515.8\toriginal\n80.0\t516.0\toriginal\n81.0\t516.2\toriginal\n82.0\t516.4\toriginal\n83.0\t516.6\toriginal\n84.0\t516.8\toriginal\n85.0\t517.0\toriginal\n86.0\t517.2\toriginal\n87.0\t517.4\toriginal\n88.0\t517.6\toriginal\n89.0\t517.8\toriginal\n90.0\t518.0\toriginal\n91.0\t518.2\toriginal\n92.0\t518.4\toriginal\n93.0\t518.6\toriginal\n94.0\t518.8\toriginal\n95.0\t519.0\toriginal\n96.0\t519.2\toriginal\n97.0\t519.4\toriginal\n98.0\t519.6\toriginal\n99.0\t519.8\toriginal\n0.0\t499.1705344508219\tnoised\n1.0\t498.2819262618583\tnoised\n2.0\t500.6971347720537\tnoised\n3.0\t502.0304392794378\tnoised\n4.0\t501.26626951762836\tnoised\n5.0\t499.9102596893579\tnoised\n6.0\t501.7312072587992\tnoised\n7.0\t501.7515237003632\tnoised\n8.0\t501.8915563141244\tnoised\n9.0\t502.3852744786275\tnoised\n10.0\t501.56945655181613\tnoised\n11.0\t504.45183420648044\tnoised\n12.0\t504.5584178161547\tnoised\n13.0\t503.60173473988255\tnoised\n14.0\t504.740813584953\tnoised\n15.0\t503.43163244325706\tnoised\n16.0\t502.30341700150126\tnoised\n17.0\t502.64995873576663\tnoised\n18.0\t502.8145155241385\tnoised\n19.0\t502.4776085457669\tnoised\n20.0\t504.20437844704423\tnoised\n21.0\t502.75621963050895\tnoised\n22.0\t504.9636110552922\tnoised\n23.0\t504.40103569980755\tnoised\n24.0\t505.5162682579546\tnoised\n25.0\t504.57386714246974\tnoised\n26.0\t504.1073627547848\tnoised\n27.0\t504.74745757293226\tnoised\n28.0\t505.2641906499336\tnoised\n29.0\t506.11564911184036\tnoised\n30.0\t505.26263256805737\tnoised\n31.0\t506.03824647295806\tnoised\n32.0\t506.3040526746802\tnoised\n33.0\t506.59538982942416\tnoised\n34.0\t507.76560973703863\tnoised\n35.0\t507.74366168382875\tnoised\n36.0\t508.1885302840047\tnoised\n37.0\t506.38016686402636\tnoised\n38.0\t506.0799300536884\tnoised\n39.0\t507.5907793475136\tnoised\n40.0\t509.07931134547607\tnoised\n41.0\t508.3416550092343\tnoised\n42.0\t507.7284463499462\tnoised\n43.0\t508.1141785552387\tnoised\n44.0\t508.90680187324443\tnoised\n45.0\t509.17744798367\tnoised\n46.0\t508.75911708393284\tnoised\n47.0\t509.2527490264127\tnoised\n48.0\t509.8852293775269\tnoised\n49.0\t510.64652086558004\tnoised\n50.0\t510.5471157083921\tnoised\n51.0\t510.7764271502573\tnoised\n52.0\t510.54525845235537\tnoised\n53.0\t510.4812522885579\tnoised\n54.0\t511.7930292266831\tnoised\n55.0\t509.819811824147\tnoised\n56.0\t510.880109638546\tnoised\n57.0\t510.85735402507856\tnoised\n58.0\t511.70923691767604\tnoised\n59.0\t511.7952537789494\tnoised\n60.0\t512.6708008079402\tnoised\n61.0\t512.1849165917422\tnoised\n62.0\t513.3968541047126\tnoised\n63.0\t511.19857419599214\tnoised\n64.0\t514.6471123351547\tnoised\n65.0\t513.6025713721936\tnoised\n66.0\t512.6679672045418\tnoised\n67.0\t513.3344281706849\tnoised\n68.0\t512.3160634147404\tnoised\n69.0\t513.6139218463379\tnoised\n70.0\t515.0091668358207\tnoised\n71.0\t514.7218487728308\tnoised\n72.0\t512.3190012562732\tnoised\n73.0\t513.8023147080642\tnoised\n74.0\t514.1438400587616\tnoised\n75.0\t514.2518253807647\tnoised\n76.0\t514.0322639369858\tnoised\n77.0\t514.0243910927591\tnoised\n78.0\t514.9800182375244\tnoised\n79.0\t515.9943104996298\tnoised\n80.0\t516.8611626217668\tnoised\n81.0\t515.3753244811584\tnoised\n82.0\t517.6867780812087\tnoised\n83.0\t515.0228978288408\tnoised\n84.0\t517.5070654354598\tnoised\n85.0\t517.934972713143\tnoised\n86.0\t516.576166434503\tnoised\n87.0\t517.5866477143718\tnoised\n88.0\t517.3572990575443\tnoised\n89.0\t517.1962214664713\tnoised\n90.0\t519.0606293955243\tnoised\n91.0\t517.2807642117278\tnoised\n92.0\t519.4885012424718\tnoised\n93.0\t518.2183769995884\tnoised\n94.0\t517.1655491238124\tnoised\n95.0\t518.2273531889476\tnoised\n96.0\t519.6918200411686\tnoised\n97.0\t518.0933315510122\tnoised\n98.0\t520.0762169009828\tnoised\n99.0\t518.0193663165611\tnoised\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668357402267_261658621",
+      "id": "paragraph_1668357402267_261658621",
+      "dateCreated": "2022-11-13T16:36:42+0000",
+      "dateStarted": "2022-11-14T15:21:57+0000",
+      "dateFinished": "2022-11-14T15:21:59+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:167"
+    },
+    {
+      "text": "%md\n$$ \\langle a, b \\rangle = \\sum_i a_i b_i $$",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:21:59+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>$$ \\langle a, b \\rangle = \\sum_i a_i b_i $$</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668358293562_563967593",
+      "id": "paragraph_1668358293562_563967593",
+      "dateCreated": "2022-11-13T16:51:33+0000",
+      "dateStarted": "2022-11-14T15:21:59+0000",
+      "dateFinished": "2022-11-14T15:21:59+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:168"
+    },
+    {
+      "text": "%md\nФункция `l2` переписана, чтобы не выполнять лишние извлечения корня и возведения в квадрат при вычислении ошибки. Результат градиентного спуска теперь включает количество итераций.",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:21:59+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Функция <code>l2</code> переписана, чтобы не выполнять лишние извлечения корня и возведения в квадрат при вычислении ошибки. Результат градиентного спуска теперь включает количество итераций.</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668369636263_1860007298",
+      "id": "paragraph_1668369636263_1860007298",
+      "dateCreated": "2022-11-13T20:00:36+0000",
+      "dateStarted": "2022-11-14T15:21:59+0000",
+      "dateFinished": "2022-11-14T15:21:59+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:169"
+    },
+    {
+      "text": "/**\n * Функция скалярного произведения\n */\ndef dot(a: Seq[Double], b: Seq[Double]): Double =\n    a.zip(b).map { case (u, v) => u * v }.sum\n\n/**\n * L2 ** 2\n */\ndef l2_squared(a: Seq[Double], b: Seq[Double]): Double =\n    a.zip(b).map { case (u, v) => u - v }.map(n => n * n).sum\n\n/**\n * Функция, определяющая среднеквадратичную ошибку\n * */\ndef mse(features: Seq[Array[Double]], weights: Seq[Double], expectedLabel: Seq[Double]): Double = {\n    val yPredicted = features.map(obj => dot(obj, weights))\n    l2_squared(yPredicted, expectedLabel) / features.length\n}\n\nimport scala.collection.mutable\n\n/**\nРезультат градиентного спуска\n *\n * @param wList  список векторов весов после каждой 100-й итерации\n * @param errors список значений ошибок после каждой 100-й итерации\n * @param w      веса\n */\ncase class GradientResult(wList: mutable.Buffer[Seq[Double]], errors: mutable.Buffer[Double], w: Seq[Double], n: Int)",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:21:59+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdot\u001b[0m: \u001b[1m\u001b[32m(a: Seq[Double], b: Seq[Double])Double\u001b[0m\n\u001b[1m\u001b[34ml2_squared\u001b[0m: \u001b[1m\u001b[32m(a: Seq[Double], b: Seq[Double])Double\u001b[0m\n\u001b[1m\u001b[34mmse\u001b[0m: \u001b[1m\u001b[32m(features: Seq[Array[Double]], weights: Seq[Double], expectedLabel: Seq[Double])Double\u001b[0m\nimport scala.collection.mutable\ndefined class GradientResult\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668357474414_1755380109",
+      "id": "paragraph_1668357474414_1755380109",
+      "dateCreated": "2022-11-13T16:37:54+0000",
+      "dateStarted": "2022-11-14T15:21:59+0000",
+      "dateFinished": "2022-11-14T15:22:03+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:170"
+    },
+    {
+      "text": "import util.control.Breaks._",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:03+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import util.control.Breaks._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668368179737_1595959376",
+      "id": "paragraph_1668368179737_1595959376",
+      "dateCreated": "2022-11-13T19:36:19+0000",
+      "dateStarted": "2022-11-14T15:22:03+0000",
+      "dateFinished": "2022-11-14T15:22:06+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:171"
+    },
+    {
+      "text": "%md\nМетод градиентного спуска переписан: теперь это функция высшего порядка. Это позволяет один раз зафиксировать `data` и `target`, а дальше варьировать параметры `eta` и `n`. Также добавлено условие выхода из цикла: если ошибка после шага градиентного спуска не уменьшилась, то работа прекращается. Кроме того, результат предыдущего исполнения метода передается на вход текущему. ",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:06+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Метод градиентного спуска переписан: теперь это функция высшего порядка. Это позволяет один раз зафиксировать <code>data</code> и <code>target</code>, а дальше варьировать параметры <code>eta</code> и <code>n</code>. Также добавлено условие выхода из цикла: если ошибка после шага градиентного спуска не уменьшилась, то работа прекращается. Кроме того, результат предыдущего исполнения метода передается на вход текущему.</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668369762232_132134418",
+      "id": "paragraph_1668369762232_132134418",
+      "dateCreated": "2022-11-13T20:02:42+0000",
+      "dateStarted": "2022-11-14T15:22:06+0000",
+      "dateFinished": "2022-11-14T15:22:06+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:172"
+    },
+    {
+      "text": "/**\n *\n * @param data   последовательность элементов типа Array(1.0, x: Double) \n * @param target последовательность элементов типа Array(y: Double) \n * @return параметризованная процедура градиентного спуска, зависящая от eta и n\n */\ndef gradientDescent(data: Seq[Array[Double]], target: Seq[Double]): (Double, Int, GradientResult) => GradientResult = {\n    // eta шаг градиентного спуска\n    // n - количество итераций\n    (eta: Double, n: Int, previousResult: GradientResult) => {\n        var GradientResult(weights, errors, w, startI) = previousResult\n        breakable {\n            for (i <- startI until n) { // ход градиентного спуска\n                w = {\n                    val predicted = data.map(x => dot(x, w))\n                    val predictedDelta = predicted.zip(target).map { case (p, real) => p - real }\n                    val gradient = data.transpose.map(t => 2 * eta * dot(t, predictedDelta) / target.length)\n                    w.zip(gradient).map { case (cur, g) => cur - g }\n                }\n                // Произошел выход за границы Double, дальше продолжать некуда\n                if (w.exists(x => x.isNaN || x.isInfinite)) {\n                    break\n                }\n                if (i % 10 == 0) {\n                    val err = mse(data, w, target)\n                    // Произошел выход за границы Double, дальше продолжать некуда\n                    if (err.isNaN || err.isInfinite) {\n                        break\n                    }\n                    // Ошибка перестала уменьшаться\n                    if (errors.nonEmpty && err >= errors.last) {\n                        break\n                    }\n                    weights += w\n                    errors += err\n                }\n            }\n        }\n        GradientResult(weights, errors, w, n)\n    }\n}\n\ndef initialResult = GradientResult(mutable.Buffer[Seq[Double]](), mutable.Buffer[Double](), Array(0.0, 0.0), 0)\nval concreteGradientDescent = gradientDescent(dataNoised.map(Array(1.0) ++ _.dropRight(1)), dataNoised.map(_.last))",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:06+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mgradientDescent\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], target: Seq[Double])(Double, Int, GradientResult) => GradientResult\u001b[0m\n\u001b[1m\u001b[34minitialResult\u001b[0m: \u001b[1m\u001b[32mGradientResult\u001b[0m\n\u001b[1m\u001b[34mconcreteGradientDescent\u001b[0m: \u001b[1m\u001b[32m(Double, Int, GradientResult) => GradientResult\u001b[0m = <function3>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668358287629_173122576",
+      "id": "paragraph_1668358287629_173122576",
+      "dateCreated": "2022-11-13T16:51:27+0000",
+      "dateStarted": "2022-11-14T15:22:06+0000",
+      "dateFinished": "2022-11-14T15:22:09+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:173"
+    },
+    {
+      "text": "%md\nПроверим, что пример из лекции сработает:",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:09+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Проверим, что пример из лекции сработает:</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668370089212_489849605",
+      "id": "paragraph_1668370089212_489849605",
+      "dateCreated": "2022-11-13T20:08:09+0000",
+      "dateStarted": "2022-11-14T15:22:09+0000",
+      "dateFinished": "2022-11-14T15:22:09+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:174"
+    },
+    {
+      "text": "concreteGradientDescent(0.0003, 50000, initialResult).w",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:09+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres2\u001b[0m: \u001b[1m\u001b[32mSeq[Double]\u001b[0m = ArrayBuffer(499.92604828102236, 0.19876174603657748)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668364969176_1754515462",
+      "id": "paragraph_1668364969176_1754515462",
+      "dateCreated": "2022-11-13T18:42:49+0000",
+      "dateStarted": "2022-11-14T15:22:09+0000",
+      "dateFinished": "2022-11-14T15:22:18+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:175"
+    },
+    {
+      "text": "%md\n# 1. Подберите оптимальные скорость обучения (`η`) и количество итераций (`n`) для примера из лекции. (4 балла)\n\nПонятно, что если желаемую точность обеспечивают меньшие `n` и большие `η`, то новые параметры лучше. Попробуем варьировать их и посмотрим, что получится:",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:18+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>1. Подберите оптимальные скорость обучения (<code>η</code>) и количество итераций (<code>n</code>) для примера из лекции. (4 балла)</h1>\n<p>Понятно, что если желаемую точность обеспечивают меньшие <code>n</code> и большие <code>η</code>, то новые параметры лучше. Попробуем варьировать их и посмотрим, что получится:</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668370116195_321479608",
+      "id": "paragraph_1668370116195_321479608",
+      "dateCreated": "2022-11-13T20:08:36+0000",
+      "dateStarted": "2022-11-14T15:22:18+0000",
+      "dateFinished": "2022-11-14T15:22:18+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:176"
+    },
+    {
+      "text": "def make_results(desirable_error: Double) = {\n    val results = mutable.Buffer[(Double, GradientResult)]()\n    for (eta <- 35 to 10 by -5) {\n        var res = initialResult\n        breakable {\n            for (n <- 0 to 50000 by 10) {\n                res = concreteGradientDescent(eta * 1E-5, n + 1, res)\n                if (res.errors.last <= desirable_error || res.wList.last != res.w) {\n                    break\n                }\n            }\n        }\n        results += ((eta * 1E-5, res))\n    }\n    results\n}\ndef print_results(results: Seq[(Double, GradientResult)]): Unit = {\n    println(\"%table\")\n    println(\"eta\\tn\\tlast_error\\tw_0\\tw_1\")\n    for ((eta, res) <- results) {\n        println(s\"$eta\\t${res.n / 10 * 10}\\t${res.errors.last}\\t${res.wList.last.head}\\t${res.wList.last(1)}\")\n        // println(s\"$eta\\t${res.n}\\t${res.errors.last}\\t${res.w.head}\\t${res.w(1)}\")\n    }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:18+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mmake_results\u001b[0m: \u001b[1m\u001b[32m(desirable_error: Double)scala.collection.mutable.Buffer[(Double, GradientResult)]\u001b[0m\n\u001b[1m\u001b[34mprint_results\u001b[0m: \u001b[1m\u001b[32m(results: Seq[(Double, GradientResult)])Unit\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668360717313_2064977635",
+      "id": "paragraph_1668360717313_2064977635",
+      "dateCreated": "2022-11-13T17:31:57+0000",
+      "dateStarted": "2022-11-14T15:22:18+0000",
+      "dateFinished": "2022-11-14T15:22:19+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:177"
+    },
+    {
+      "text": "%md\nВ этой задаче `n` зависит от `η`, поэтому будем перебирать некоторые `η` и ограничим `n` сверху значением `50K`, зафисировав желаемое `ε = 10` (mean squared error)",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:20+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>В этой задаче <code>n</code> зависит от <code>η</code>, поэтому будем перебирать некоторые <code>η</code> и ограничим <code>n</code> сверху значением <code>50K</code>, зафисировав желаемое <code>ε = 10</code> (mean squared error)</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668419246961_1867233868",
+      "id": "paragraph_1668419246961_1867233868",
+      "dateCreated": "2022-11-14T09:47:26+0000",
+      "dateStarted": "2022-11-14T15:22:20+0000",
+      "dateFinished": "2022-11-14T15:22:20+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:178"
+    },
+    {
+      "text": "print_results(make_results(10))",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:20+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "eta": "string",
+                      "n": "string",
+                      "last_error": "string",
+                      "w_0": "string",
+                      "w_1": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "eta\tn\tlast_error\tw_0\tw_1\n3.5000000000000005E-4\t10\t394993.68614110036\t0.35687924647774844\t17.77928084598092\n3.0000000000000003E-4\t29040\t9.992536327655042\t494.16247000996555\t0.28565657491029506\n2.5E-4\t34850\t9.9893779691783\t494.1635053745486\t0.28564096519285315\n2.0E-4\t43560\t9.995524466399196\t494.16149061051254\t0.2856713408671136\n1.5000000000000001E-4\t50000\t32.2088655415748\t489.0523639568037\t0.36269930255848276\n1.0E-4\t50000\t397.7132005161239\t460.62614810193423\t0.7912683348626581\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668363709853_1329828911",
+      "id": "paragraph_1668363709853_1329828911",
+      "dateCreated": "2022-11-13T18:21:49+0000",
+      "dateStarted": "2022-11-14T15:22:20+0000",
+      "dateFinished": "2022-11-14T15:22:47+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:179"
+    },
+    {
+      "text": "%md\nИ попробуем достичь точности `ε = 1` с таким же перебором по `η`:",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:47+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>И попробуем достичь точности <code>ε = 1</code> с таким же перебором по <code>η</code>:</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668372130716_1963199114",
+      "id": "paragraph_1668372130716_1963199114",
+      "dateCreated": "2022-11-13T20:42:10+0000",
+      "dateStarted": "2022-11-14T15:22:47+0000",
+      "dateFinished": "2022-11-14T15:22:47+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:180"
+    },
+    {
+      "text": "print_results(make_results(1))",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:22:47+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "eta": "string",
+                      "n": "string",
+                      "last_error": "string",
+                      "w_0": "string",
+                      "w_1": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "eta\tn\tlast_error\tw_0\tw_1\n3.5000000000000005E-4\t10\t394993.68614110036\t0.35687924647774844\t17.77928084598092\n3.0000000000000003E-4\t42020\t0.9999023813193257\t499.3401402643631\t0.20759521275620763\n2.5E-4\t50000\t1.0199537689713605\t499.29400142572473\t0.20829082688676223\n2.0E-4\t50000\t3.3054378757077814\t497.0461353978331\t0.24218087307656863\n1.5000000000000001E-4\t50000\t32.2088655415748\t489.0523639568037\t0.36269930255848276\n1.0E-4\t50000\t397.7132005161239\t460.62614810193423\t0.7912683348626581\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668372313426_1012328073",
+      "id": "paragraph_1668372313426_1012328073",
+      "dateCreated": "2022-11-13T20:45:13+0000",
+      "dateStarted": "2022-11-14T15:22:47+0000",
+      "dateFinished": "2022-11-14T15:23:23+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:181"
+    },
+    {
+      "text": "%md\nМожно видеть, что независимо от выбора шага `η` требуется как минимум 50K итераций для достижения точности `ε = 1`, что говорит о том, что\nметод градиентного спуска с постоянным шагом для данной задачи\n \n- сходится медленно\n- расходится при `η ⩾ 3.5e-4`\n\nПоэтому как для `ε = 1`, так и для `ε = 10` оптимальным будет `η = 3e-4`. Найдем точные `n = n(η)` для заданных `ε`.",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:23:23+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Можно видеть, что независимо от выбора шага <code>η</code> требуется как минимум 50K итераций для достижения точности <code>ε = 1</code>, что говорит о том, что<br />\nметод градиентного спуска с постоянным шагом для данной задачи</p>\n<ul>\n<li>сходится медленно</li>\n<li>расходится при <code>η ⩾ 3.5e-4</code></li>\n</ul>\n<p>Поэтому как для <code>ε = 1</code>, так и для <code>ε = 10</code> оптимальным будет <code>η = 3e-4</code>. Найдем точные <code>n = n(η)</code> для заданных <code>ε</code>.</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668419547144_722974648",
+      "id": "paragraph_1668419547144_722974648",
+      "dateCreated": "2022-11-14T09:52:27+0000",
+      "dateStarted": "2022-11-14T15:23:23+0000",
+      "dateFinished": "2022-11-14T15:23:23+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:182"
+    },
+    {
+      "text": "case class GradientResult2(error: Double, w: Seq[Double], n: Int)\n/**\n *\n * @param data   последовательность элементов типа Array(1.0, x: Double) \n * @param target последовательность элементов типа Array(y: Double) \n * @return параметризованная процедура градиентного спуска, зависящая от epsilon - необходимая точность\n */\ndef gradientDescent2(data: Seq[Array[Double]], target: Seq[Double]): Double => GradientResult2 = {\n    epsilon: Double => {\n        //var GradientResult(weights, errors, w, startI) = initialResult\n        var (error, w, i) = (0.0, data.head.map { x => 0.0 }, 0)\n        val eta = 3e-4\n        val transposedData = data.transpose\n        breakable {\n            while (true) { // ход градиентного спуска\n                val currentW = {\n                    val predicted = data.map(dot(_, w))\n                    val predictedDelta = predicted.zip(target).map { case (p, real) => p - real }\n                    val gradient = transposedData.map(2 * eta * dot(_, predictedDelta) / target.length)\n                    w.zip(gradient).map { case (cur, g) => cur - g }\n                }\n                // Произошел выход за границы Double, дальше продолжать некуда\n                if (w.exists(x => x.isNaN || x.isInfinite)) {\n                    break\n                }\n                val currentError = mse(data, w, target)\n                // Произошел выход за границы Double, дальше продолжать некуда\n                if (currentError.isNaN || currentError.isInfinite) {\n                    break\n                }\n                error = currentError\n                w = currentW\n                i += 1\n                // ОК достигнута необходимая точность\n                if (error <= epsilon) {\n                    break\n                }\n            }\n        }\n        GradientResult2(error, w, i)\n    }\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:24:24+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class GradientResult2\n\u001b[1m\u001b[34mgradientDescent2\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], target: Seq[Double])Double => GradientResult2\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668420397593_534355769",
+      "id": "paragraph_1668420397593_534355769",
+      "dateCreated": "2022-11-14T10:06:37+0000",
+      "dateStarted": "2022-11-14T15:23:23+0000",
+      "dateFinished": "2022-11-14T15:23:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:183"
+    },
+    {
+      "text": "%md\nВ таблице - оптимальные с точки зрения желаемой точности `ε_desirable` значения n при `η = 3e-4`.",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:23:26+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>В таблице - оптимальные с точки зрения желаемой точности <code>ε_desirable</code> значения n при <code>η = 3e-4</code>.</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668423168619_1043471397",
+      "id": "paragraph_1668423168619_1043471397",
+      "dateCreated": "2022-11-14T10:52:48+0000",
+      "dateStarted": "2022-11-14T15:23:26+0000",
+      "dateFinished": "2022-11-14T15:23:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:184"
+    },
+    {
+      "text": "val concreteGradientDescent2 = gradientDescent2(dataNoised.map(Array(1.0) ++ _.dropRight(1)), dataNoised.map(_.last))",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:47:05+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668440820878_421428895",
+      "id": "paragraph_1668440820878_421428895",
+      "dateCreated": "2022-11-14T15:47:00+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:4498",
+      "dateFinished": "2022-11-14T15:47:20+0000",
+      "dateStarted": "2022-11-14T15:47:05+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mconcreteGradientDescent2\u001b[0m: \u001b[1m\u001b[32mDouble => GradientResult2\u001b[0m = <function1>\n"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Ответ",
+      "text": "println(\"%table\")\nprintln(\"ε_desirable\\tn\\tε\\tw_0\\tw_1\")\nfor (eps <- Seq(10.0, 1.0)) {\n    val GradientResult2(error, w, n) = concreteGradientDescent2(eps)\n    println(s\"$eps\\t$n\\t$error\\t${w.head}\\t${w(1)}\")\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:46:58+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {},
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "ε_desirable\tn\tε\tw_0\tw_1\n10.0\t29040\t9.99812140105699\t494.16155485595453\t0.28567037226802033\n1.0\t42021\t0.9999560294848361\t499.3401402643631\t0.20759521275620763\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668421494358_1093152612",
+      "id": "paragraph_1668421494358_1093152612",
+      "dateCreated": "2022-11-14T10:24:54+0000",
+      "dateStarted": "2022-11-14T15:46:56+0000",
+      "dateFinished": "2022-11-14T15:47:19+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:185"
+    },
+    {
+      "text": "%md\n# Вместо того, чтобы задавать количество итераций, задайте условия остановки алгоритма — когда ошибка за итерацию начинает изменяться ниже определенного порога и максимальное количество итераций. (6 баллов)",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:47:20+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h1>Вместо того, чтобы задавать количество итераций, задайте условия остановки алгоритма — когда ошибка за итерацию начинает изменяться ниже определенного порога и максимальное количество итераций. (6 баллов)</h1>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668420361513_481266066",
+      "id": "paragraph_1668420361513_481266066",
+      "dateCreated": "2022-11-14T10:06:01+0000",
+      "dateStarted": "2022-11-14T15:47:20+0000",
+      "dateFinished": "2022-11-14T15:47:20+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:186"
+    },
+    {
+      "title": "Решение задания",
+      "text": "/**\n * метод градиентного спуска\n * @param data последовательность элементов типа Array(1.0, x: Double) \n * @param target последовательность элементов типа Array(y: Double) \n * @param eta шаг градиентного спуска\n * @param deltaEpsilon минимальное изменение ошибки\n * @param n максимальное количество итераций\n */\ndef gradientDescent3(data: Seq[Array[Double]], target: Seq[Double], eta: Double, deltaEpsilon: Double, n: Int): GradientResult = {\n    val weights = mutable.Buffer[Seq[Double]]()\n    val errors = mutable.Buffer[Double]()\n    var w = Array(0.0, 0.0)\n    var prevError = 0.0\n    var i = 0\n    val transposedData = data.transpose\n    breakable {\n        while (i < n) { // ход градиентного спуска\n            w = {\n                val predicted = data.map(x => dot(x, w))\n                val predictedDelta = predicted.zip(target).map { case (p, real) => p - real }\n                val gradient = transposedData.map(t => 2 * eta * dot(t, predictedDelta) / target.length)\n                w.zip(gradient).map { case (cur, g) => cur - g }\n            }\n            \n            // Произошел выход за границы Double, дальше продолжать некуда\n            if (w.exists(x => x.isNaN || x.isInfinite)) {\n                break\n            }\n            val err = mse(data, w, target)\n            // Произошел выход за границы Double, дальше продолжать некуда\n            if (err.isNaN || err.isInfinite) {\n                break\n            }\n            // Ошибка увеличилась или уменьшилась не более чем на deltaEpsilon\n            if (i != 0 && err >= prevError - deltaEpsilon) {\n                break\n            }\n            i += 1\n            if (i % 10 == 0) {\n                weights += w\n                errors += err\n            }\n            prevError = err\n        }\n    }\n    GradientResult(weights, errors, w, i)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:45:39+0000",
+      "progress": 0,
+      "config": {
+        "title": true,
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mgradientDescent3\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], target: Seq[Double], eta: Double, deltaEpsilon: Double, n: Int)GradientResult\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668369530455_1274016697",
+      "id": "paragraph_1668369530455_1274016697",
+      "dateCreated": "2022-11-13T19:58:50+0000",
+      "dateStarted": "2022-11-14T15:43:10+0000",
+      "dateFinished": "2022-11-14T15:43:11+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:187"
+    },
+    {
+      "text": "val result = gradientDescent3(dataNoised.map(Array(1.0) ++ _.dropRight(1)), dataNoised.map(_.last), 3e-4, 1e-2, 50000)",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:43:14+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mresult\u001b[0m: \u001b[1m\u001b[32mGradientResult\u001b[0m = GradientResult(ArrayBuffer(WrappedArray(0.7908293448202726, 1.9870453775077195), WrappedArray(1.5727156999391037, 3.4576902999835877), WrappedArray(2.347672682674241, 4.545377607917926), WrappedArray(3.1171940419505013, 5.349068380637522), WrappedArray(3.8823879920891033, 5.942152055536264), WrappedArray(4.644076834621693, 6.379054164192649), WrappedArray(5.402870837735819, 6.700136623316419), WrappedArray(6.1592230252038975, 6.935331785947675), WrappedArray(6.9134698078029055, 7.106837450439327), WrappedArray(7.665861115538404, 7.231115476606884), WrappedArray(8.416582743674825, 7.320373957602395), WrappedArray(9.165772924531748, 7.383666397194939), WrappedArray(9.913534617113603, 7.427706858617355), WrappedArray(10.659944621088654, 7...."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668440044749_923649788",
+      "id": "paragraph_1668440044749_923649788",
+      "dateCreated": "2022-11-14T15:34:04+0000",
+      "dateStarted": "2022-11-14T15:43:14+0000",
+      "dateFinished": "2022-11-14T15:43:22+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:188"
+    },
+    {
+      "text": "result.w",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:43:23+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres16\u001b[0m: \u001b[1m\u001b[32mSeq[Double]\u001b[0m = WrappedArray(488.79800034127254, 0.36653422624717136)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668440176214_1428183183",
+      "id": "paragraph_1668440176214_1428183183",
+      "dateCreated": "2022-11-14T15:36:16+0000",
+      "dateStarted": "2022-11-14T15:43:23+0000",
+      "dateFinished": "2022-11-14T15:43:24+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:189"
+    },
+    {
+      "text": "result.n",
+      "user": "anonymous",
+      "dateUpdated": "2022-11-14T15:44:14+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres17\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 24850\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1668440232828_1242568186",
+      "id": "paragraph_1668440232828_1242568186",
+      "dateCreated": "2022-11-14T15:37:12+0000",
+      "dateStarted": "2022-11-14T15:44:14+0000",
+      "dateFinished": "2022-11-14T15:44:14+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:190"
+    }
+  ],
+  "name": "Gradient Descent",
+  "id": "2HHNCJWBA",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {
+    "isRunning": false
+  },
+  "path": "/Gradient Descent"
+}

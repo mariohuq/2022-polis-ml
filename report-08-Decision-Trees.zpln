@@ -1,0 +1,1052 @@
+{
+ "paragraphs": [
+  {
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "apps": [],
+   "status": "READY",
+   "text": "%md\nКондраев Дмитрий",
+   "id": "",
+   "config": {}
+  },
+  {
+   "text": "import scala.collection.BitSet\n\nval rnd = new util.Random(\"Decision Trees\".hashCode)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:16:38.218",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "import scala.collection.BitSet\n\u001b[1m\u001b[34mrnd\u001b[0m: \u001b[1m\u001b[32mscala.util.Random\u001b[0m = scala.util.Random@74c4c6a7\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509979_249341342",
+   "id": "paragraph_1668499509947_244601418",
+   "dateCreated": "2022-11-15 08:05:09.979",
+   "dateStarted": "2022-11-20 23:16:38.223",
+   "dateFinished": "2022-11-20 23:16:38.488",
+   "status": "FINISHED"
+  },
+  {
+   "text": "val (clazz1OffsetX, clazz1OffsetY, clazz1DispersionX, clazz1DispersionY) = (0, 5, 2, 2)\nval clazz1 = (1 to 85).map(_ => (\n    rnd.nextGaussian * clazz1DispersionX + clazz1OffsetX, \n    rnd.nextGaussian * clazz1DispersionY + clazz1OffsetY, \n    1.0\n))",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 20:13:39.858",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mclazz1OffsetX\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 0\n\u001b[1m\u001b[34mclazz1OffsetY\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 5\n\u001b[1m\u001b[34mclazz1DispersionX\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 2\n\u001b[1m\u001b[34mclazz1DispersionY\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 2\n\u001b[1m\u001b[34mclazz1\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.IndexedSeq[(Double, Double, Double)]\u001b[0m = Vector((1.7789208574541069,5.972259789190276,1.0), (3.389146315847775,6.687500115415844,1.0), (-2.186716791974227,2.5238185681867074,1.0), (0.43057254688741253,5.595026830181776,1.0), (1.8188042155253101,3.83027445318159,1.0), (2.29789191762947,0.269003123096323,1.0), (0.620054721721423,4.526501174115144,1.0), (2.062060546435179,2.5674137416540024,1.0), (1.5122259233807789,5.646258543608402,1.0), (3.518144413062854,5.900840003785184,1.0), (1.2444231686249874,5.613021776571647,1.0), (-0.67..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509980_1857046570",
+   "id": "paragraph_1668499509948_1842359777",
+   "dateCreated": "2022-11-15 08:05:09.981",
+   "dateStarted": "2022-11-20 20:13:39.870",
+   "dateFinished": "2022-11-20 20:13:46.549",
+   "status": "FINISHED"
+  },
+  {
+   "text": "val (clazz2OffsetX, clazz2OffsetY, clazz2DispersionX, clazz2DispersionY) = (5, 0, 1, 0.5)\nval clazz2 = Range(0, 15).map(_ => (\n        rnd.nextGaussian * clazz2DispersionX + clazz2OffsetX,\n        rnd.nextGaussian * clazz2DispersionY + clazz2OffsetY, \n    2.0\n))",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 20:13:41.867",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mclazz2OffsetX\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 5\n\u001b[1m\u001b[34mclazz2OffsetY\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 0\n\u001b[1m\u001b[34mclazz2DispersionX\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m = 1\n\u001b[1m\u001b[34mclazz2DispersionY\u001b[0m: \u001b[1m\u001b[32mDouble\u001b[0m = 0.5\n\u001b[1m\u001b[34mclazz2\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.IndexedSeq[(Double, Double, Double)]\u001b[0m = Vector((7.065420075205172,-0.2398972660026111,2.0), (5.486603889279811,0.8840471973132998,2.0), (4.996830900886447,-0.28348395078348065,2.0), (6.024256824201583,0.002457853005205788,2.0), (5.5378735349176385,-0.8883272531404248,2.0), (4.450198684560829,-0.5985028081737226,2.0), (6.521511189363606,0.48603053033761345,2.0), (5.018683197612631,0.14987154452385995,2.0), (4.616127385669233,0.027428848172011102,2.0), (5.558076107652578,0.7269804637916051,2.0), (5.478968422843022,-0.0611045..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509981_1037842550",
+   "id": "paragraph_1668499509949_1930700362",
+   "dateCreated": "2022-11-15 08:05:09.981",
+   "dateStarted": "2022-11-20 20:13:41.888",
+   "dateFinished": "2022-11-20 20:13:49.014",
+   "status": "FINISHED"
+  },
+  {
+   "text": "val data = clazz1 ++ clazz2",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 20:13:44.993",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mdata\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.IndexedSeq[(Double, Double, Double)]\u001b[0m = Vector((1.7789208574541069,5.972259789190276,1.0), (3.389146315847775,6.687500115415844,1.0), (-2.186716791974227,2.5238185681867074,1.0), (0.43057254688741253,5.595026830181776,1.0), (1.8188042155253101,3.83027445318159,1.0), (2.29789191762947,0.269003123096323,1.0), (0.620054721721423,4.526501174115144,1.0), (2.062060546435179,2.5674137416540024,1.0), (1.5122259233807789,5.646258543608402,1.0), (3.518144413062854,5.900840003785184,1.0), (1.2444231686249874,5.613021776571647,1.0), (-0.679636604542612,0.49762558332014084,1.0), (-0.4119114161301963,3.42693494254509,1.0), (2.781450965770431,5.1433755144627975,1.0), (-0.7690483366017178,2.003035430667393,1.0), (-1.0508606913363256,4.0734754379..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197333_931855944",
+   "id": "paragraph_1668501197333_931855944",
+   "dateCreated": "2022-11-15 08:33:17.333",
+   "dateStarted": "2022-11-20 20:13:46.662",
+   "dateFinished": "2022-11-20 20:13:50.525",
+   "status": "FINISHED"
+  },
+  {
+   "text": "println(\"%table\")\nprintln(\"x\\ty\\tclz\")\ndata.map{ case(x, y, clz) => s\"$x\\t$y\\t${clz.toInt}\"}.foreach(println)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:11:41.345",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {
+     "bdtMeta": {
+      "inlay": {
+       "size": {
+        "height": 588.0
+       }
+      }
+     }
+    },
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TABLE",
+      "data": "x\ty\tclz\n1.7789208574541069\t5.972259789190276\t1\n3.389146315847775\t6.687500115415844\t1\n-2.186716791974227\t2.5238185681867074\t1\n0.43057254688741253\t5.595026830181776\t1\n1.8188042155253101\t3.83027445318159\t1\n2.29789191762947\t0.269003123096323\t1\n0.620054721721423\t4.526501174115144\t1\n2.062060546435179\t2.5674137416540024\t1\n1.5122259233807789\t5.646258543608402\t1\n3.518144413062854\t5.900840003785184\t1\n1.2444231686249874\t5.613021776571647\t1\n-0.679636604542612\t0.49762558332014084\t1\n-0.4119114161301963\t3.42693494254509\t1\n2.781450965770431\t5.1433755144627975\t1\n-0.7690483366017178\t2.003035430667393\t1\n-1.0508606913363256\t4.073475437931517\t1\n1.07570090847445\t7.531677245803751\t1\n-0.2678974251794206\t4.92676766444013\t1\n-0.7653477112930213\t4.894727527008422\t1\n1.9779954839251594\t3.741947224490723\t1\n-1.4166141962918188\t5.579383677207501\t1\n2.117256610063616\t3.480021478750939\t1\n1.5920256616998023\t1.3139793452324882\t1\n-1.11113509731903\t2.7465182383382576\t1\n1.798341049863108\t3.1532016058955716\t1\n-0.3989099993209235\t5.512407348488396\t1\n1.7465407596267044\t5.2509148381556265\t1\n1.6765110985625227\t2.222077889938461\t1\n-1.4152044778260666\t5.475956389016522\t1\n0.7141101065773527\t2.1677864868326115\t1\n-1.8295490055389743\t1.56749609367212\t1\n1.4317510453656215\t2.3258737922504977\t1\n-1.232984180846246\t4.918606602008581\t1\n-1.700888174453843\t5.7907288991591805\t1\n-0.3217260382646694\t4.889400744935256\t1\n3.204256377555077\t6.948498349905859\t1\n-2.328864291624576\t5.921811492205986\t1\n-1.1607468954081832\t6.7113485056285835\t1\n-4.129976413801192\t6.748481423952327\t1\n0.4391790303044461\t3.532690208307342\t1\n1.0986056074975998\t2.0291828069854767\t1\n4.403806963587731\t6.331257243368841\t1\n-3.7573790595565417\t5.945447715867851\t1\n2.204764537904919\t5.469497989101499\t1\n0.7114324158916296\t4.624495092290206\t1\n-0.37799371290714506\t4.9744860362747625\t1\n0.3354957655964672\t9.234717507106987\t1\n-1.5140225452135048\t5.554638601062277\t1\n-1.2472432107680458\t3.2505243758821494\t1\n1.5800803831683266\t4.339970888648424\t1\n0.16756731362342828\t6.354422133664876\t1\n-0.45941015266823687\t2.0384632555230047\t1\n-0.22051623088340683\t7.866436190716681\t1\n-2.2574485031974505\t3.4843716461636323\t1\n0.8766476321961973\t5.599159756708711\t1\n1.780247455892102\t5.277096738913593\t1\n-3.1426042777129486\t8.373144549095176\t1\n-1.0679842711467606\t5.048677305962511\t1\n-1.0166663556071993\t6.504829010655224\t1\n1.4306443723131235\t4.800902643950628\t1\n1.732723029633741\t2.0652160853324957\t1\n2.9471639970111068\t5.688575954992069\t1\n-0.3031002934945893\t2.1448775559301163\t1\n0.6134058643047361\t7.145589740031839\t1\n1.1016806021786698\t6.162539047186128\t1\n0.11053826422921137\t10.22430285523075\t1\n0.5345428597472464\t2.3854734170098313\t1\n2.1532824059848714\t6.153113812442422\t1\n-0.41177733707862413\t7.758489996937422\t1\n4.26219734622269\t3.008254331871946\t1\n0.010615414886971306\t5.68069573957244\t1\n-3.1875187022014146\t6.8973394474925485\t1\n3.9139252040927635\t1.442747178869646\t1\n0.7377240897038541\t1.2048004415515363\t1\n0.2911210789056442\t6.083210654395014\t1\n-2.1316639917826112\t4.336575999093007\t1\n-0.5075859091917423\t8.36882268385397\t1\n-0.0689339607957141\t5.173665928537955\t1\n1.130089393465324\t7.368084218211864\t1\n-2.5300025460213798\t6.573302286166398\t1\n-3.3847566988970423\t7.269282494942397\t1\n1.5437610076056267\t6.1427831763818395\t1\n0.3484453706088573\t6.888050233835756\t1\n4.739275156567292\t3.723111147365531\t1\n-1.1058052653779047\t2.4039858148453788\t1\n7.065420075205172\t-0.2398972660026111\t2\n5.486603889279811\t0.8840471973132998\t2\n4.996830900886447\t-0.28348395078348065\t2\n6.024256824201583\t0.002457853005205788\t2\n5.5378735349176385\t-0.8883272531404248\t2\n4.450198684560829\t-0.5985028081737226\t2\n6.521511189363606\t0.48603053033761345\t2\n5.018683197612631\t0.14987154452385995\t2\n4.616127385669233\t0.027428848172011102\t2\n5.558076107652578\t0.7269804637916051\t2\n5.478968422843022\t-0.06110459036867909\t2\n4.298655437280828\t-0.07375589074357337\t2\n4.663459969923879\t0.05205303187540797\t2\n4.5331644691642285\t0.4121666083548494\t2\n3.2308846842156314\t-0.3408927859396882\t2\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197368_1747040629",
+   "id": "paragraph_1668501197368_1747040629",
+   "dateCreated": "2022-11-15 08:33:17.368",
+   "dateStarted": "2022-11-20 20:13:51.294",
+   "dateFinished": "2022-11-20 20:13:53.429",
+   "status": "FINISHED"
+  },
+  {
+   "text": "sealed trait TreeNode\n/**\n* Класс узла\n*\n* @param index индекс признака, по которому ведется сравнение с порогом в этом узле\n* @param t значение порога\n* @param trueBranch поддерево, удовлетворяющее условию в узле\n* @param falseBranch поддерево, не удовлетворяющее условию в узле\n*/\ncase class Node(index: Int, t: Double, trueBranch: TreeNode, falseBranch: TreeNode) extends TreeNode\n/**\n* Класс терминального узла (листа)\n*\n* @param data признаки объектов\n* @param labels классы объектов\n*/\ncase class Leaf(data: Seq[Array[Double]], labels: Seq[Double]) extends TreeNode {\n    /**\n    * Подсчет количества объектов разных классов\n    */\n    val prediction: Double = labels\n        .groupBy(identity)\n        .maxBy{ case (_, values) => values.size } // класс с максимальным количеством объектов\n        ._1\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:45:41.323",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "defined trait TreeNode\ndefined class Node\ndefined class Leaf\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197409_628190763",
+   "id": "paragraph_1668501197409_628190763",
+   "dateCreated": "2022-11-15 08:33:17.409",
+   "dateStarted": "2022-11-20 21:45:41.329",
+   "dateFinished": "2022-11-20 21:45:42.285",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n* Расчет критерия Джини\n * \n * H(k) = 1 - ∑ p^2_k, p_k -- вероятность выдачи класса k\n*/\ndef gini(labels: Seq[Double]): Double = {\n    val classCounts = labels\n        .groupBy(identity)\n        .map { case (_, values) => values.size }\n    val n = labels.size\n    \n    1.0 - classCounts.map{ count =>\n        count.toDouble * count\n    }.sum / (n * n)\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:45:44.834",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mgini\u001b[0m: \u001b[1m\u001b[32m(labels: Seq[Double])Double\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197432_1119084313",
+   "id": "paragraph_1668501197432_1119084313",
+   "dateCreated": "2022-11-15 08:33:17.432",
+   "dateStarted": "2022-11-20 21:45:44.843",
+   "dateFinished": "2022-11-20 21:45:45.541",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n * Расчет качества\n */\ndef quality(left_labels: Seq[Double], right_labels: Seq[Double], current_gini: Double): Double = {\n    // доля выбоки, ушедшая в левое поддерево\n    val p = left_labels.size.toDouble / (left_labels.size + right_labels.size)\n    \n    current_gini - p * gini(left_labels) - (1 - p) * gini(right_labels)\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:45:46.584",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mquality\u001b[0m: \u001b[1m\u001b[32m(left_labels: Seq[Double], right_labels: Seq[Double], current_gini: Double)Double\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197449_699011621",
+   "id": "paragraph_1668501197449_699011621",
+   "dateCreated": "2022-11-15 08:33:17.449",
+   "dateStarted": "2022-11-20 21:45:46.596",
+   "dateFinished": "2022-11-20 21:45:47.032",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n* Разбиение датасета в узле\n*/\ndef split(data: Seq[Array[Double]], labels: Seq[Double], index: Int, t: Double): (Seq[Array[Double]], Seq[Array[Double]], Seq[Double], Seq[Double]) = {\n    val (truePairs, falsePairs) = data.zip(labels)\n            .partition{ case (datum, _) => datum(index) <= t }\n    val (trueData, trueLabels) = truePairs.unzip\n    val (falseData, falseLabels) = falsePairs.unzip\n    (trueData, falseData, trueLabels, falseLabels)\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:45:48.330",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34msplit\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double], index: Int, t: Double)(Seq[Array[Double]], Seq[Array[Double]], Seq[Double], Seq[Double])\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197464_1204680155",
+   "id": "paragraph_1668501197464_1204680155",
+   "dateCreated": "2022-11-15 08:33:17.464",
+   "dateStarted": "2022-11-20 21:45:48.336",
+   "dateFinished": "2022-11-20 21:45:48.958",
+   "status": "FINISHED"
+  },
+  {
+   "text": "import scala.collection.TraversableOnce\nobject MyImplicits {\n    implicit class SumByOperation[A](seq: TraversableOnce[A]) {\n      def maxByOption[B](f: A => B)(implicit cmp: Ordering[B]): Option[A] = Some(seq).filter(_.nonEmpty).map(_.maxBy(f))\n    }\n}\nimport MyImplicits._\n/**\n* Нахождение наилучшего разбиения\n*/\ndef findBestSplit(data: Seq[Array[Double]], labels: Seq[Double]): Option[(Double, Double, Int)] = {\n    // обозначим минимальное количество объектов в узле\n    val minLeaf = 5\n    val currentGini = gini(labels)\n    \n    data.head.indices\n    .flatMap(index => data\n            .map(_(index))\n            // будем проверять только уникальные значения признака, исключая повторения\n            .distinct\n            .flatMap(t => {\n        val (trueData, falseData, trueLabels, falseLabels) = split(data, labels, index, t)\n        if (trueData.length >= minLeaf && falseData.length >= minLeaf) {\n            Some(quality(trueLabels, falseLabels, currentGini), t, index)\n        } else {\n            None\n        }\n    }))\n    .maxByOption { case (quality, _, _) => quality }\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:23:12.354",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "import scala.collection.TraversableOnce\ndefined object MyImplicits\nimport MyImplicits._\n\u001b[1m\u001b[34mfindBestSplit\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double])Option[(Double, Double, Int)]\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197483_1051442040",
+   "id": "paragraph_1668501197483_1051442040",
+   "dateCreated": "2022-11-15 08:33:17.483",
+   "dateStarted": "2022-11-20 22:23:12.361",
+   "dateFinished": "2022-11-20 22:23:14.081",
+   "status": "FINISHED"
+  },
+  {
+   "text": "def buildTree(data: Seq[Array[Double]], labels: Seq[Double]): TreeNode = findBestSplit(data, labels) match {\n    case None | Some((0, _, _)) => Leaf(data, labels)\n    case Some((_, t, index))    => {\n        val (trueData, falseData, trueLabels, falseLabels) = split(data, labels, index, t)\n        Node(index, t,\n            buildTree(trueData, trueLabels),\n            buildTree(falseData, falseLabels))\n    }\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:24:38.015",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mbuildTree\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double])TreeNode\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197493_1444346778",
+   "id": "paragraph_1668501197493_1444346778",
+   "dateCreated": "2022-11-15 08:33:17.493",
+   "dateStarted": "2022-11-20 22:24:38.019",
+   "dateFinished": "2022-11-20 22:24:38.562",
+   "status": "FINISHED"
+  },
+  {
+   "text": "def predict(data: Seq[Array[Double]], tree: TreeNode): Seq[Double] = \n    data.map(feature => {\n        @scala.annotation.tailrec\n        def classifyObject(feature: Array[Double], treeNode: TreeNode): Double = {\n            treeNode match {\n                case leaf: Leaf =>\n                    leaf.prediction\n                case node: Node =>\n                    if (feature(node.index) <= node.t) classifyObject(feature, node.trueBranch)\n                    else classifyObject(feature, node.falseBranch)\n            }\n        }\n      classifyObject(feature, tree)\n    })",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:48:00.359",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mpredict\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], tree: TreeNode)Seq[Double]\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197524_1190096738",
+   "id": "paragraph_1668501197524_1190096738",
+   "dateCreated": "2022-11-15 08:33:17.524",
+   "dateStarted": "2022-11-20 21:47:43.524",
+   "dateFinished": "2022-11-20 21:47:44.157",
+   "status": "FINISHED"
+  },
+  {
+   "text": "val (train, test) = rnd.shuffle(data).splitAt(90)\n\nval trainData = train.map(v => Array(v._1, v._2))\nval trainLabels = train.map(v => v._3)\n\nval testData = test.map(v => Array(v._1, v._2))\nval testLabels = test.map(v => v._3)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:39:14.752",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mtrain\u001b[0m: \u001b[1m\u001b[32mscala.collection.immutable.IndexedSeq[(Double, Double, Double)]\u001b[0m = Vector((5.486603889279811,0.8840471973132998,2.0), (2.204764537904919,5.469497989101499,1.0), (0.6134058643047361,7.145589740031839,1.0), (1.5122259233807789,5.646258543608402,1.0), (4.26219734622269,3.008254331871946,1.0), (-1.1058052653779047,2.4039858148453788,1.0), (3.204256377555077,6.948498349905859,1.0), (0.5345428597472464,2.3854734170098313,1.0), (-0.0689339607957141,5.173665928537955,1.0), (1.5800803831683266,4.339970888648424,1.0), (-0.7690483366017178,2.003035430667393,1.0), (1.798341049863108,3.1532016058955716,1.0), (0.3484453706088573,6.888050233835756,1.0), (-1.4166141962918188,5.579383677207501,1.0), (4.616127385669233,0.027428848172011102,2.0), (1.8188042155253101,3.83027..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197614_991294302",
+   "id": "paragraph_1668501197614_991294302",
+   "dateCreated": "2022-11-15 08:33:17.615",
+   "dateStarted": "2022-11-20 21:49:53.942",
+   "dateFinished": "2022-11-20 21:49:54.593",
+   "status": "FINISHED"
+  },
+  {
+   "text": "val tree = buildTree(trainData, trainLabels)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:23:44.278",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mtree\u001b[0m: \u001b[1m\u001b[32mTreeNode\u001b[0m = Node(1,0.8840471973132998,Node(1,0.14987154452385995,Leaf(Vector([D@20859923, [D@4dab4b83, [D@67e69a68, [D@373bf3b8, [D@3bfb38fd, [D@2c9b8b52, [D@7f7d6173, [D@1733eb17),Vector(2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0)),Leaf(Vector([D@756d05dc, [D@55cd138, [D@113e4e19, [D@19dd647a, [D@483c178),Vector(2.0, 2.0, 2.0, 1.0, 2.0))),Leaf(Vector([D@673505c1, [D@418c1b8, [D@76148bf5, [D@6c861c4e, [D@23521712, [D@618507c1, [D@339c7327, [D@6f246d76, [D@5c7d0d07, [D@150fa246, [D@455aee8b, [D@959748b, [D@3d785592, [D@550ddde9, [D@47b14f75, [D@58e8624, [D@7aa597c2, [D@417cffea, [D@cfbca57, [D@7d35c24a, [D@2bf841a9, [D@d5d6893, [D@5fa6b21d, [D@cd20c31, [D@65cef10b, [D@33104d1, [D@696d68f0, [D@75425268, [D@6796a362, [D@6c0a34cd, [D@6e22eb54, [D@91435ea, [D@5b4b0..."
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197652_811645234",
+   "id": "paragraph_1668501197652_811645234",
+   "dateCreated": "2022-11-15 08:33:17.653",
+   "dateStarted": "2022-11-20 22:23:44.287",
+   "dateFinished": "2022-11-20 22:23:44.652",
+   "status": "FINISHED"
+  },
+  {
+   "text": "def printTree(treeNode: TreeNode, spacing: String = \"\"): Unit = {\n    treeNode match {\n        case leaf: Leaf => \n            println(s\"${spacing} Прогноз: ${leaf.prediction}\")\n        \n        case node: Node => \n            println(s\"${spacing}Индекс ${node.index}\")\n            println(s\"${spacing}Порог ${node.t}\")\n            \n            println(s\"$spacing--> True:\")\n            printTree(node.trueBranch, spacing + \"\\t\")\n            \n            println(s\"$spacing--> False:\")\n            printTree(node.falseBranch, spacing + \"\\t\")\n    }\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:23:46.700",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mprintTree\u001b[0m: \u001b[1m\u001b[32m(treeNode: TreeNode, spacing: String)Unit\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668501197772_1302553645",
+   "id": "paragraph_1668501197772_1302553645",
+   "dateCreated": "2022-11-15 08:33:17.772",
+   "dateStarted": "2022-11-20 22:23:46.703",
+   "dateFinished": "2022-11-20 22:23:47.130",
+   "status": "FINISHED"
+  },
+  {
+   "text": "printTree(tree)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:23:48.780",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "Индекс 1\nПорог 0.8840471973132998\n--> True:\n\tИндекс 1\n\tПорог 0.14987154452385995\n\t--> True:\n\t\t Прогноз: 2.0\n\t--> False:\n\t\t Прогноз: 2.0\n--> False:\n\t Прогноз: 1.0\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509983_217741135",
+   "id": "paragraph_1668499509958_680129588",
+   "dateCreated": "2022-11-15 08:05:09.983",
+   "dateStarted": "2022-11-20 22:23:48.788",
+   "dateFinished": "2022-11-20 22:23:49.014",
+   "status": "FINISHED"
+  },
+  {
+   "text": "val trainAnswers = predict(trainData, tree)\n\nval testAnswers = predict(testData, tree)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-15 08:05:09.983",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mtrainAnswers\u001b[0m: \u001b[1m\u001b[32mSeq[Double]\u001b[0m = Vector(2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0, 2.0, 1.0, 2.0, 1.0)\n\u001b[1m\u001b[34mtestAnswers\u001b[0m: \u001b[1m\u001b[32mSeq[Double]\u001b[0m = Vector(2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509983_664701524",
+   "id": "paragraph_1668499509958_1846804124",
+   "dateCreated": "2022-11-15 08:05:09.983",
+   "status": "READY"
+  },
+  {
+   "text": "def accuracyMetric(actual: Seq[Double], predicted: Seq[Double]): Double = {\n    val correct = actual.zip(predicted).count { case (a, p) => a == p }\n    1.0 * correct / actual.length\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-15 08:05:09.983",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34maccuracyMetric\u001b[0m: \u001b[1m\u001b[32m(actual: Seq[Double], predicted: Seq[Double])Double\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509983_2079006385",
+   "id": "paragraph_1668499509959_270518195",
+   "dateCreated": "2022-11-15 08:05:09.983",
+   "status": "READY"
+  },
+  {
+   "text": "val trainAccuracy = accuracyMetric(trainLabels, trainAnswers)\nval testAccuracy = accuracyMetric(testLabels, testAnswers)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-15 08:05:09.983",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mtrainAccuracy\u001b[0m: \u001b[1m\u001b[32mDouble\u001b[0m = 0.9888888888888889\n\u001b[1m\u001b[34mtestAccuracy\u001b[0m: \u001b[1m\u001b[32mDouble\u001b[0m = 1.0\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509983_745334877",
+   "id": "paragraph_1668499509959_1501771502",
+   "dateCreated": "2022-11-15 08:05:09.983",
+   "status": "READY"
+  },
+  {
+   "text": "%md\n# В коде из методички реализуйте два критерия останова (количество листьев, количество используемых признаков, глубина дерева и т.д.) (по 2 балла заj  каждый критерий)",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:24:31.899",
+   "progress": 0,
+   "config": {
+    "editorSetting": {
+     "language": "scala",
+     "editOnDblClick": false,
+     "completionKey": "TAB",
+     "completionSupport": true
+    },
+    "colWidth": 12.0,
+    "editorMode": "ace/mode/scala",
+    "fontSize": 9.0,
+    "results": {},
+    "enabled": true
+   },
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h1>В коде из методички реализуйте два критерия останова (количество листьев, количество используемых признаков, глубина дерева и т.д.) (по 2 балла за каждый критерий)</h1>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668499509983_155928195",
+   "id": "paragraph_1668499509960_1409147983",
+   "dateCreated": "2022-11-15 08:05:09.984",
+   "dateStarted": "2022-11-20 20:13:28.890",
+   "dateFinished": "2022-11-20 20:13:35.836",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n * Критерий останова по глубине дерева\n */\ndef buildTree2(data: Seq[Array[Double]], labels: Seq[Double], maxDepth: Int): TreeNode = {\n    if (maxDepth <= 0) {\n        Leaf(data, labels)\n    } else {\n        findBestSplit(data, labels) match {\n            case None | Some((0, _, _)) => Leaf(data, labels)\n            case Some((_, t, index))    => {\n                val (trueData, falseData, trueLabels, falseLabels) = split(data, labels, index, t)\n                Node(index, t,\n                    buildTree2(trueData, trueLabels, maxDepth - 1),\n                    buildTree2(falseData, falseLabels, maxDepth - 1))\n            }\n        }\n    }\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:28:59.074",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mbuildTree2\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double], maxDepth: Int)TreeNode\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668975208888_1137782258",
+   "id": "paragraph_1668975208888_1137782258",
+   "dateCreated": "2022-11-20 20:13:28.888",
+   "dateStarted": "2022-11-20 22:28:59.078",
+   "dateFinished": "2022-11-20 22:28:59.682",
+   "status": "FINISHED"
+  },
+  {
+   "text": "printTree(buildTree2(trainData, trainLabels, 1))",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:40:47.136",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "Индекс 1\nПорог 0.8840471973132998\n--> True:\n\t Прогноз: 2.0\n--> False:\n\t Прогноз: 1.0\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668983354032_1487935398",
+   "id": "paragraph_1668983354032_1487935398",
+   "dateCreated": "2022-11-20 22:29:14.034",
+   "dateStarted": "2022-11-20 22:40:47.140",
+   "dateFinished": "2022-11-20 22:40:47.521",
+   "status": "FINISHED"
+  },
+  {
+   "text": "import scala.collection.BitSet",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 21:44:35.088",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "import scala.collection.BitSet\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668980661836_760595034",
+   "id": "paragraph_1668980661836_760595034",
+   "dateCreated": "2022-11-20 21:44:21.836",
+   "dateStarted": "2022-11-20 21:44:35.093",
+   "dateFinished": "2022-11-20 21:44:35.545",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n * Критерий останова по количеству используемых признаков\n */\ndef buildTree3(data: Seq[Array[Double]], labels: Seq[Double], maxFeatures: Int): TreeNode = {\n    def inner(data: Seq[Array[Double]], labels: Seq[Double], featuresUsed: BitSet): TreeNode = findBestSplit(data, labels) match {\n        case None | Some((0, _, _)) => Leaf(data, labels)\n        case Some((_, t, index))    => {\n            val used = featuresUsed + index\n            if (used.size > maxFeatures) {\n                Leaf(data, labels)\n            } else {\n                val (trueData, falseData, trueLabels, falseLabels) = split(data, labels, index, t)\n                Node(index, t,\n                    inner(trueData, trueLabels, used),\n                    inner(falseData, falseLabels, used))\n            }\n        }\n    }\n    inner(data, labels, BitSet.empty)\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:37:14.778",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mbuildTree3\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double], maxFeatures: Int)TreeNode\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668980158313_1482483870",
+   "id": "paragraph_1668980158313_1482483870",
+   "dateCreated": "2022-11-20 21:35:58.313",
+   "dateStarted": "2022-11-20 22:37:14.782",
+   "dateFinished": "2022-11-20 22:37:15.304",
+   "status": "FINISHED"
+  },
+  {
+   "text": "printTree(buildTree3(trainData, trainLabels, 1))",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:40:28.846",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "Индекс 1\nПорог 0.8840471973132998\n--> True:\n\tИндекс 1\n\tПорог 0.14987154452385995\n\t--> True:\n\t\t Прогноз: 2.0\n\t--> False:\n\t\t Прогноз: 2.0\n--> False:\n\t Прогноз: 1.0\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668980644876_554090814",
+   "id": "paragraph_1668980644876_554090814",
+   "dateCreated": "2022-11-20 21:44:04.876",
+   "dateStarted": "2022-11-20 22:40:28.849",
+   "dateFinished": "2022-11-20 22:40:29.180",
+   "status": "FINISHED"
+  },
+  {
+   "text": "%md\n# Реализуйте дерево для задачи регрессии. Возьмите за основу дерево, реализованное на лекции, заменив механизм предсказания в листе на взятие среднего значения по выборке, и критерий Джини на дисперсию значений (6 баллов) или замените критерий Джини на энтропию Шеннона (3 балла).\n\nРеализовано построение дерева для задачи регрессии, использующее среднее значение в качестве предсказания и дисперсию в качестве критерия информативности.\n\nМинимум дисперсии достигается при равенстве всех `label`ов объектов.",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:27:09.736",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "HTML",
+      "data": "<div class=\"markdown-body\">\n<h1>Реализуйте дерево для задачи регрессии. Возьмите за основу дерево, реализованное на лекции, заменив механизм предсказания в листе на взятие среднего значения по выборке, и критерий Джини на дисперсию значений (6 баллов) или замените критерий Джини на энтропию Шеннона (3 балла).</h1>\n<p>Реализовано построение дерева для задачи регрессии, использующее среднее значение в качестве предсказания и дисперсию в качестве критерия информативности.</p>\n<p>Минимум дисперсии достигается при равенстве всех <code>label</code>ов объектов.</p>\n\n</div>"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668983615939_425926944",
+   "id": "paragraph_1668983615939_425926944",
+   "dateCreated": "2022-11-20 22:33:35.939",
+   "dateStarted": "2022-11-20 23:27:09.742",
+   "dateFinished": "2022-11-20 23:27:09.765",
+   "status": "FINISHED"
+  },
+  {
+   "text": "sealed trait TreeNodeReg\n/**\n* Класс узла\n*\n* @param index индекс признака, по которому ведется сравнение с порогом в этом узле\n* @param t значение порога\n* @param trueBranch поддерево, удовлетворяющее условию в узле\n* @param falseBranch поддерево, не удовлетворяющее условию в узле\n*/\ncase class NodeReg(index: Int, t: Double, trueBranch: TreeNode, falseBranch: TreeNode) extends TreeNodeReg\n/**\n* Класс терминального узла (листа)\n*\n* @param data признаки объектов\n* @param labels классы объектов\n*/\ncase class LeafReg(data: Seq[Array[Double]], labels: Seq[Double]) extends TreeNodeReg {\n    /**\n    * Подсчет среднего значения\n    */\n    val prediction: Double = labels.sum / labels.size\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 22:47:59.434",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "defined trait TreeNodeReg\ndefined class NodeReg\ndefined class LeafReg\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668984114984_1240553905",
+   "id": "paragraph_1668984114984_1240553905",
+   "dateCreated": "2022-11-20 22:41:54.984",
+   "dateStarted": "2022-11-20 22:47:59.443",
+   "dateFinished": "2022-11-20 22:48:00.224",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n* Расчет дисперсии H(R) = variance (y). (x,y) ∈ R\n*/\ndef variance(labels: Seq[Double]): Double = {\n    val n = labels.size\n    val mean = labels.sum / n\n    \n    labels.map{ y =>\n        (y - mean) * (y - mean)\n    }.sum / n\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:04:48.592",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mvariance\u001b[0m: \u001b[1m\u001b[32m(labels: Seq[Double])Double\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668984479442_358910487",
+   "id": "paragraph_1668984479442_358910487",
+   "dateCreated": "2022-11-20 22:47:59.442",
+   "dateStarted": "2022-11-20 23:04:48.599",
+   "dateFinished": "2022-11-20 23:04:48.959",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n * Расчет функционала качества Q(R_m, j, s) = H(R_m) - |R_l|/|R_n| H(R_l) - |R_r|/|R_n| H(R_r)\n */\ndef qualityReg(left_labels: Seq[Double], right_labels: Seq[Double], current_variance: Double): Double = {\n    // доля выбоки, ушедшая в левое поддерево\n    val p = left_labels.size.toDouble / (left_labels.size + right_labels.size)\n    \n    current_variance - p * variance(left_labels) - (1 - p) * variance(right_labels)\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:04:52.431",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mqualityReg\u001b[0m: \u001b[1m\u001b[32m(left_labels: Seq[Double], right_labels: Seq[Double], current_variance: Double)Double\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668984976675_941526409",
+   "id": "paragraph_1668984976675_941526409",
+   "dateCreated": "2022-11-20 22:56:16.676",
+   "dateStarted": "2022-11-20 23:04:52.435",
+   "dateFinished": "2022-11-20 23:04:52.758",
+   "status": "FINISHED"
+  },
+  {
+   "text": "/**\n* Нахождение наилучшего разбиения\n*/\ndef findBestSplitReg(data: Seq[Array[Double]], labels: Seq[Double]): Option[(Double, Double, Int)] = {\n    // обозначим минимальное количество объектов в узле\n    val minLeaf = 2\n    val currentVar = variance(labels)\n    \n    data.head.indices\n    .flatMap(index => data\n            .map(_(index))\n            // будем проверять только уникальные значения признака, исключая повторения\n            .distinct\n            .flatMap(t => {\n        val (trueData, falseData, trueLabels, falseLabels) = split(data, labels, index, t)\n        if (trueData.length >= minLeaf && falseData.length >= minLeaf) {\n            Some(qualityReg(trueLabels, falseLabels, currentVar), t, index)\n        } else {\n            None\n        }\n    }))\n    .maxByOption { case (quality, _, _) => quality }\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:07:00.832",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mfindBestSplitReg\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double])Option[(Double, Double, Int)]\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668985492434_1368360697",
+   "id": "paragraph_1668985492434_1368360697",
+   "dateCreated": "2022-11-20 23:04:52.434",
+   "dateStarted": "2022-11-20 23:07:00.836",
+   "dateFinished": "2022-11-20 23:07:01.431",
+   "status": "FINISHED"
+  },
+  {
+   "text": "def buildTreeReg(data: Seq[Array[Double]], labels: Seq[Double]): TreeNode = findBestSplitReg(data, labels) match {\n    case None => Leaf(data, labels)\n    case Some((_, t, index)) => {\n        val (trueData, falseData, trueLabels, falseLabels) = split(data, labels, index, t)\n        Node(index, t,\n            buildTree(trueData, trueLabels),\n            buildTree(falseData, falseLabels))\n    }\n}",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:09:06.877",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "\u001b[1m\u001b[34mbuildTreeReg\u001b[0m: \u001b[1m\u001b[32m(data: Seq[Array[Double]], labels: Seq[Double])TreeNode\u001b[0m\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668985590876_628793742",
+   "id": "paragraph_1668985590876_628793742",
+   "dateCreated": "2022-11-20 23:06:30.877",
+   "dateStarted": "2022-11-20 23:09:06.886",
+   "dateFinished": "2022-11-20 23:09:07.197",
+   "status": "FINISHED"
+  },
+  {
+   "text": "printTree(buildTreeReg(trainData, trainLabels))",
+   "user": "anonymous",
+   "dateUpdated": "2022-11-20 23:09:09.426",
+   "progress": 0,
+   "config": {},
+   "settings": {
+    "params": {},
+    "forms": {}
+   },
+   "results": {
+    "code": "SUCCESS",
+    "msg": [
+     {
+      "type": "TEXT",
+      "data": "Индекс 1\nПорог 0.8840471973132998\n--> True:\n\tИндекс 1\n\tПорог 0.14987154452385995\n\t--> True:\n\t\t Прогноз: 2.0\n\t--> False:\n\t\t Прогноз: 2.0\n--> False:\n\t Прогноз: 1.0\n"
+     }
+    ]
+   },
+   "apps": [],
+   "runtimeInfos": {},
+   "progressUpdateIntervalMs": 500,
+   "jobName": "paragraph_1668985701354_753087817",
+   "id": "paragraph_1668985701354_753087817",
+   "dateCreated": "2022-11-20 23:08:21.356",
+   "dateStarted": "2022-11-20 23:09:09.430",
+   "dateFinished": "2022-11-20 23:09:09.848",
+   "status": "FINISHED"
+  }
+ ],
+ "name": "Decision Trees",
+ "id": "2HH13XUN8",
+ "defaultInterpreterGroup": "spark",
+ "version": "0.10.0",
+ "noteParams": {},
+ "noteForms": {},
+ "angularObjects": {},
+ "config": {
+  "isZeppelinNotebookCronEnable": false
+ },
+ "info": {}
+}

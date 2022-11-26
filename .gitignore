@@ -7,6 +7,11 @@
 # ...and not docs
 !*.md
 
+# ...and not pandoc stuff
+!config/*
+!*.sublime-project
+!build.sh
+
 # ...and not report files
 !*.pdf
 

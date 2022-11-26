@@ -1,0 +1,17 @@
+{
+	"build_systems": [
+		{
+			"name": "Pandoc for current file",
+			"cmd": ["./build.sh", "$file_name", "$file_base_name.pdf"],
+			"selector": "text.html.markdown",
+		}
+	],
+	"folders":
+	[
+		{
+			"name": "root",
+			"path": ".",
+			"file_exclude_patterns": ["*.pdf"],
+		}
+	],
+}

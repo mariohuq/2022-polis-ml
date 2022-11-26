@@ -1,0 +1,66 @@
+\usepackage{textcase}
+\newcommand{\var}[1]{\texttt{#1}}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+  \fvset{
+    fontsize=\footnotesize,
+    frame=leftline,
+    rulecolor=\color{gray},
+    tabsize=4,
+    breaklines=true,
+  breakanywhere=true}
+  \newcommand{\code}[1]{
+    \subsection*{\texttt{#1}}
+    \VerbatimInput{../lines-qt-widgets/#1}
+  }
+\usepackage{fontspec}
+
+\usepackage{amsthm}
+\newtheorem{Statement}{Утверждение}
+% \renewtheorem{proof}{Доказательство}
+
+% \usepackage{adjustbox}
+%     \newcommand{\eqdef}{\xlongequal{\text{def}}}
+%     \DeclareMathOperator{\tg}{tg}
+%     \DeclareMathOperator{\arctg}{arctg}
+%     \newcommand{\deleted}[1]{\overset{∘}{#1}}
+%     \newcommand{\sequenceFrom}[3]{\left\{ #1 \right\}_{#2 = #3}^{∞}}
+%     \newcommand{\sequence}[2]{\sequenceFrom{#1}{#2}{1}}
+%     \newcommand{\sequenceN}[1]{\sequence{#1}{n}}
+%     \newcommand{\sequenceNFrom}[2]{\sequenceFrom{#1}{n}{#2}}
+%     \newfontfamily{\cyrillicfont}{PT Serif}
+%
+%     \usepackage{pgfplots}
+%     \pgfplotsset{compat=1.18}
+%     \usepackage{mathrsfs}
+%     \usetikzlibrary{arrows}
+%     \usetikzlibrary{patterns.meta}
+%     \usepackage{longtable, booktabs, array}
+%     \usepackage{caption}
+%     \usepackage{subcaption}
+%     \AtBeginDocument{\renewcommand{\setminus}{\mathbin{\backslash}}}
+%     \removenolimits{\int\iint}
+
+% fancyvrb листинги
+
+% https://tex.stackexchange.com/a/457403 - nolimits
+% https://tex.stackexchange.com/a/140343 - setminus
+% \usepackage[mdici]{mathdesign}
+% \usepackage{upgreek}
+% \renewcommand{\alpha}{\upalpha}
+% \renewcommand{\beta}{\upbeta}
+% \renewcommand{\delta}{\updelta}
+% \renewcommand{\Delta}{\Updelta}
+% \renewcommand{\lambda}{\uplambda}
+% \renewcommand{\pi}{\uppi}
+% \renewcommand{\varepsilon}{\upvarepsilon}
+% \renewcommand{\varphi}{\upvarphi}
+% \renewcommand{\psi}{\uppsi}
+% \renewcommand{\xi}{\upxi}
+% \newfontfamily{\cyrillicfont}{Free Schoolbook}
+% \usepackage[mdici, greeklowercase=upright]{mathdesign}
+
+\DeclareMathOperator{\sgn}{sgn}

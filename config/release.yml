@@ -1,0 +1,15 @@
+# input-files:
+# - main.md
+# output-file: main.pdf
+
+# include-before-body: config/titlepage.tex
+metadata-files:
+- config/meta.yml
+defaults:
+  config/defaults.yml
+# filters: 
+# - pandoc-theorem
+highlight-style: haddock
+citeproc: true
+# template: latex-abstract-without-title.tex
+# template: latex.tex

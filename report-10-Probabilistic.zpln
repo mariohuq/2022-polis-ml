@@ -1,0 +1,849 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n# ДЗ 10. Кондраев Дмитрий\n\n## В каких Java-библиотеках есть реализации `HyperLogLog`, `BloomFilter`, `CountMinSketch`, `PriorityQueue`? (1 балл)\n\n`PriorityQueue` есть в стандарной библиотеке: `java.util.PriorityQueue`.\n\n`HyperLogLog`: [`net.agkn.hll`](https://search.maven.org/artifact/net.agkn/hll), [`com.google.zetasketch`](https://search.maven.org/artifact/com.google.zetasketch/zetasketch).\n\n`BloomFilter`: [`com.google.guava`](https://search.maven.org/artifact/com.google.guava/guava).\n\n`CountMinSketch`: [`org.apache.spark:spark-sketch`](https://search.maven.org/artifact/org.apache.spark/spark-sketch_2.13/3.3.1/jar).\n\nScala-библиотека, используемая в этом ДЗ: [`com.twitter.algebird`](https://search.maven.org/artifact/com.twitter/algebird-core_2.13).\n\n## Для датасета `ppkm_sentiment` посчитайте количество уникальных элементов используя `HyperLogLog`. (3 балла)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:44:58.241",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {
+          "bdtMeta": {
+            "inlay": {
+              "size": {
+                "height": 67.0
+              }
+            }
+          }
+        },
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eДЗ 10. Кондраев Дмитрий\u003c/h1\u003e\n\u003ch2\u003eВ каких Java-библиотеках есть реализации \u003ccode\u003eHyperLogLog\u003c/code\u003e, \u003ccode\u003eBloomFilter\u003c/code\u003e, \u003ccode\u003eCountMinSketch\u003c/code\u003e, \u003ccode\u003ePriorityQueue\u003c/code\u003e? (1 балл)\u003c/h2\u003e\n\u003cp\u003e\u003ccode\u003ePriorityQueue\u003c/code\u003e есть в стандарной библиотеке: \u003ccode\u003ejava.util.PriorityQueue\u003c/code\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eHyperLogLog\u003c/code\u003e: \u003ca href\u003d\"https://search.maven.org/artifact/net.agkn/hll\"\u003e\u003ccode\u003enet.agkn.hll\u003c/code\u003e\u003c/a\u003e, \u003ca href\u003d\"https://search.maven.org/artifact/com.google.zetasketch/zetasketch\"\u003e\u003ccode\u003ecom.google.zetasketch\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eBloomFilter\u003c/code\u003e: \u003ca href\u003d\"https://search.maven.org/artifact/com.google.guava/guava\"\u003e\u003ccode\u003ecom.google.guava\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eCountMinSketch\u003c/code\u003e: \u003ca href\u003d\"https://search.maven.org/artifact/org.apache.spark/spark-sketch_2.13/3.3.1/jar\"\u003e\u003ccode\u003eorg.apache.spark:spark-sketch\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eScala-библиотека, используемая в этом ДЗ: \u003ca href\u003d\"https://search.maven.org/artifact/com.twitter/algebird-core_2.13\"\u003e\u003ccode\u003ecom.twitter.algebird\u003c/code\u003e\u003c/a\u003e.\u003c/p\u003e\n\u003ch2\u003eДля датасета \u003ccode\u003eppkm_sentiment\u003c/code\u003e посчитайте количество уникальных элементов используя \u003ccode\u003eHyperLogLog\u003c/code\u003e. (3 балла)\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670167009312_288254074",
+      "id": "paragraph_1670167009312_288254074",
+      "dateCreated": "2022-12-04 15:16:49.313",
+      "dateStarted": "2022-12-04 19:44:58.244",
+      "dateFinished": "2022-12-04 19:44:58.279",
+      "status": "FINISHED"
+    },
+    {
+      "text": "import com.twitter.algebird._\nimport java.nio.charset.StandardCharsets",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:49:55.948",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import com.twitter.algebird._\nimport java.nio.charset.StandardCharsets\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670164902870_262132510",
+      "id": "paragraph_1670164902870_262132510",
+      "dateCreated": "2022-12-04 14:41:42.870",
+      "dateStarted": "2022-12-04 19:49:55.955",
+      "dateFinished": "2022-12-04 19:49:56.607",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Проверим, что датасет на месте",
+      "text": "%sh\nhdfs dfs -ls /user/hduser/ppkm",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 16:28:21.790",
+      "progress": 0,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Found 3 items\n-rw-r--r--   1 hduser supergroup      43320 2022-12-04 15:32 /user/hduser/ppkm/ppkm_dataset.csv\n-rw-r--r--   1 hduser supergroup        476 2022-12-04 15:32 /user/hduser/ppkm/ppkm_test.csv\n-rw-r--r--   1 hduser supergroup       4015 2022-12-04 15:32 /user/hduser/ppkm/stopwordv1.txt\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670167793587_439642179",
+      "id": "paragraph_1670167793587_439642179",
+      "dateCreated": "2022-12-04 15:29:53.587",
+      "dateStarted": "2022-12-04 15:32:35.277",
+      "dateFinished": "2022-12-04 15:32:39.271",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Чтение и загрузка слов из датасета",
+      "text": "val input \u003d \"/user/hduser/ppkm/ppkm_dataset.csv\"\nval words \u003d sc.textFile(input)\n        .map(_.split(\",\", 2).last)\n        .flatMap(_.split(\"\"\"(\\s|\\p{Punct})+\"\"\"))\n        .filter(_.nonEmpty)\n        .map(_.toLowerCase)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:10.692",
+      "progress": 100,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34minput\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d /user/hduser/ppkm/ppkm_dataset.csv\n\u001b[1m\u001b[34mwords\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.rdd.RDD[String]\u001b[0m \u003d MapPartitionsRDD[87] at map at \u003cconsole\u003e:47\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670167216049_45429462",
+      "id": "paragraph_1670167216049_45429462",
+      "dateCreated": "2022-12-04 15:20:16.049",
+      "dateStarted": "2022-12-04 19:09:10.696",
+      "dateFinished": "2022-12-04 19:09:12.146",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Общее количество слов",
+      "text": "words.count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:14.681",
+      "progress": 0,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres47\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 5561\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670168001929_822107541",
+      "id": "paragraph_1670168001929_822107541",
+      "dateCreated": "2022-12-04 15:33:21.929",
+      "dateStarted": "2022-12-04 19:09:14.685",
+      "dateFinished": "2022-12-04 19:09:15.423",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n### Решение с использованием библиотеки `com.twitter.algebird`",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:45:03.615",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eРешение с использованием библиотеки \u003ccode\u003ecom.twitter.algebird\u003c/code\u003e\u003c/h3\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670171407571_50131859",
+      "id": "paragraph_1670171407571_50131859",
+      "dateCreated": "2022-12-04 16:30:07.571",
+      "dateStarted": "2022-12-04 19:45:03.620",
+      "dateFinished": "2022-12-04 19:45:03.656",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val hllMonoid \u003d new HyperLogLogMonoid(bits \u003d HyperLogLog.bitsForError(0.01))\n\nimplicit def string2Bytes(s: String): Array[Byte] \u003d s.getBytes(StandardCharsets.UTF_8)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 16:22:10.008",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[33mwarning: \u001b[0mthere was one feature warning; re-run with -feature for details\n\u001b[1m\u001b[34mhllMonoid\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.HyperLogLogMonoid\u001b[0m \u003d com.twitter.algebird.HyperLogLogMonoid@5d77da67\n\u001b[1m\u001b[34mstring2Bytes\u001b[0m: \u001b[1m\u001b[32m(s: String)Array[Byte]\u001b[0m\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670164927631_2092096876",
+      "id": "paragraph_1670164927631_2092096876",
+      "dateCreated": "2022-12-04 14:42:07.632",
+      "dateStarted": "2022-12-04 16:22:10.013",
+      "dateFinished": "2022-12-04 16:22:12.038",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val result \u003d words\n        .map(hllMonoid.create(_))\n        .reduce(_ + _)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:24.722",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mresult\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.HLL\u001b[0m \u003d DenseHLL(14,Bytes(0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,3,0,0,0,0,0,0,0,0,0,2,0,2,1,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,1,2,0,1,0,0,0,2,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,2,0,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670168848964_258887914",
+      "id": "paragraph_1670168848964_258887914",
+      "dateCreated": "2022-12-04 15:47:28.964",
+      "dateStarted": "2022-12-04 19:09:24.726",
+      "dateFinished": "2022-12-04 19:09:25.943",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Ответ на вопрос задачи",
+      "text": "result.estimatedSize",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:28.116",
+      "progress": 0,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres48\u001b[0m: \u001b[1m\u001b[32mDouble\u001b[0m \u003d 1696.9195825853312\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670171139849_1821895603",
+      "id": "paragraph_1670171139849_1821895603",
+      "dateCreated": "2022-12-04 16:25:39.849",
+      "dateStarted": "2022-12-04 19:09:28.120",
+      "dateFinished": "2022-12-04 19:09:28.473",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n### Решение средствами Spark",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:45:10.619",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eРешение средствами Spark\u003c/h3\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670171552050_1400111084",
+      "id": "paragraph_1670171552050_1400111084",
+      "dateCreated": "2022-12-04 16:32:32.050",
+      "dateStarted": "2022-12-04 19:45:10.624",
+      "dateFinished": "2022-12-04 19:45:10.657",
+      "status": "FINISHED"
+    },
+    {
+      "text": "words.countApproxDistinct(0.01)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:40.202",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres49\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 1689\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670172997594_1341639909",
+      "id": "paragraph_1670172997594_1341639909",
+      "dateCreated": "2022-12-04 16:56:37.595",
+      "dateStarted": "2022-12-04 19:09:40.207",
+      "dateFinished": "2022-12-04 19:09:40.599",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Точный ответ",
+      "text": "words.distinct().count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:42.844",
+      "progress": 0,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres50\u001b[0m: \u001b[1m\u001b[32mLong\u001b[0m \u003d 1686\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670178343890_26426326",
+      "id": "paragraph_1670178343890_26426326",
+      "dateCreated": "2022-12-04 18:25:43.891",
+      "dateStarted": "2022-12-04 19:09:42.848",
+      "dateFinished": "2022-12-04 19:09:43.591",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## Для датасета `ppkm_sentiment` постройте `BloomFilter` и определите есть ли в нем слово “di”? (3 балла)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:45:28.163",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eДля датасета \u003ccode\u003eppkm_sentiment\u003c/code\u003e постройте \u003ccode\u003eBloomFilter\u003c/code\u003e и определите есть ли в нем слово “di”? (3 балла)\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670167033320_1934839316",
+      "id": "paragraph_1670167033320_1934839316",
+      "dateCreated": "2022-12-04 15:17:13.320",
+      "dateStarted": "2022-12-04 19:45:28.169",
+      "dateFinished": "2022-12-04 19:45:28.178",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val bfMonoid \u003d BloomFilter[String](words.count().toInt, 0.01)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:49.255",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mbfMonoid\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.BloomFilterMonoid[String]\u001b[0m \u003d BloomFilterMonoid(7,53303)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670171635740_1711993620",
+      "id": "paragraph_1670171635740_1711993620",
+      "dateCreated": "2022-12-04 16:33:55.740",
+      "dateStarted": "2022-12-04 19:09:49.259",
+      "dateFinished": "2022-12-04 19:09:49.841",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val bf \u003d words.map(bfMonoid.create).reduce(_ ++ _)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:53.218",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mbf\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.BF[String]\u001b[0m \u003d BFInstance(BFHash(7,53303),BitSet(9, 16, 17, 21, 25, 26, 36, 39, 44, 48, 51, 55, 57, 59, 66, 72, 79, 84, 95, 106, 111, 112, 124, 130, 133, 144, 150, 151, 152, 155, 156, 159, 160, 170, 179, 182, 185, 197, 201, 206, 209, 210, 213, 215, 222, 234, 235, 251, 262, 265, 271, 280, 282, 283, 285, 304, 307, 308, 309, 314, 322, 324, 325, 327, 330, 331, 334, 337, 343, 352, 357, 363, 364, 365, 368, 369, 372, 377, 378, 383, 384, 385, 392, 393, 406, 416, 417, 430, 431, 432, 445, 452, 460, 473, 480, 486, 487, 488, 491, 493, 498, 500, 502, 514, 517, 524, 525, 529, 536, 542, 543, 550, 551, 562, 574, 576, 578, 580, 599, 603, 605, 608, 612, 618, 619, 625, 630, 635, 640, 642, 647, 649, 656, 664, 669, 675, 684, 685, 689, 691, 713, 716, 722, 723,..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670172841580_767655529",
+      "id": "paragraph_1670172841580_767655529",
+      "dateCreated": "2022-12-04 16:54:01.580",
+      "dateStarted": "2022-12-04 19:09:53.225",
+      "dateFinished": "2022-12-04 19:09:55.001",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Ответ с помощью библиотеки",
+      "text": "bf.contains(\"di\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:09:56.518",
+      "progress": 0,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres51\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.ApproximateBoolean\u001b[0m \u003d ApproximateBoolean(true,0.9999783478819476)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670173464128_341880643",
+      "id": "paragraph_1670173464128_341880643",
+      "dateCreated": "2022-12-04 17:04:24.128",
+      "dateStarted": "2022-12-04 19:09:56.521",
+      "dateFinished": "2022-12-04 19:09:56.836",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Точный ответ",
+      "text": "!words.filter(_ \u003d\u003d \"di\").isEmpty()",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:10:00.660",
+      "progress": 100,
+      "config": {
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres52\u001b[0m: \u001b[1m\u001b[32mBoolean\u001b[0m \u003d true\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670178460119_824680265",
+      "id": "paragraph_1670178460119_824680265",
+      "dateCreated": "2022-12-04 18:27:40.119",
+      "dateStarted": "2022-12-04 19:10:00.663",
+      "dateFinished": "2022-12-04 19:10:01.368",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n## Для датасета `ppkm_sentiment` найдите топ-30 самых популярных слов используя `CountMinSketch` и `PriorityQueue` (3 балла)\n\n\u003c!-- # или найдите топ-20 самых длинных слов используя только `PriorityQueue` (2 балла) --\u003e\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:45:33.181",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eДля датасета \u003ccode\u003eppkm_sentiment\u003c/code\u003e найдите топ-30 самых популярных слов используя \u003ccode\u003eCountMinSketch\u003c/code\u003e и \u003ccode\u003ePriorityQueue\u003c/code\u003e (3 балла)\u003c/h2\u003e\n\u003c!-- # или найдите топ-20 самых длинных слов используя только `PriorityQueue` (2 балла) --\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670171623696_350864225",
+      "id": "paragraph_1670171623696_350864225",
+      "dateCreated": "2022-12-04 16:33:43.696",
+      "dateStarted": "2022-12-04 19:45:33.185",
+      "dateFinished": "2022-12-04 19:45:33.208",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val cmsMonoid \u003d {\n    val ε \u003d 1e-5 // относительная погрешность\n    val δ \u003d 1e-4 // вероятность верного ответа \u003e\u003d 1 - δ\n    val maxSize \u003d 30\n    TopNCMS.monoid[String](ε, δ, 1, maxSize)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:39:19.542",
+      "progress": 100,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcmsMonoid\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.TopNCMSMonoid[String]\u001b[0m \u003d com.twitter.algebird.TopNCMSMonoid@3554a41f\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670167147686_1402485773",
+      "id": "paragraph_1670167147686_1402485773",
+      "dateCreated": "2022-12-04 15:19:07.686",
+      "dateStarted": "2022-12-04 19:39:19.546",
+      "dateFinished": "2022-12-04 19:39:19.963",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val cms \u003d words.map(cmsMonoid.create).reduce(_ ++ _)",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:39:23.374",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mcms\u001b[0m: \u001b[1m\u001b[32mcom.twitter.algebird.TopCMS[String]\u001b[0m \u003d TopCMSInstance(SparseCMS(Map(3x72atvmya -\u003e 1, pilihan -\u003e 1, mulai -\u003e 20, ngontrak -\u003e 1, satgas -\u003e 4, ruangan -\u003e 1, riduwandaddu -\u003e 1, malah -\u003e 9, ganti -\u003e 1, rakornas -\u003e 1, ditakuti -\u003e 1, diberi -\u003e 2, suntik -\u003e 1, mau -\u003e 12, 14jt -\u003e 1, dibatasi -\u003e 4, kemajuan -\u003e 1, pinggir -\u003e 1, ridwan -\u003e 1, rakyat -\u003e 13, sosialisasikan -\u003e 1, jaga -\u003e 5, laksanakan -\u003e 3, swt -\u003e 1, ku -\u003e 4, penting -\u003e 3, milik -\u003e 1, paru -\u003e 2, kagak -\u003e 1, berbasis -\u003e 31, ucapan -\u003e 1, wajar -\u003e 2, ratusan -\u003e 1, banget -\u003e 4, gembar -\u003e 1, 𝟮𝟬𝟮𝟭 -\u003e 2, keinginan -\u003e 1, untuk -\u003e 27, menjaga -\u003e 11, jauh -\u003e 1, sayang -\u003e 1, pendatang -\u003e 1, lcg8qek9uu -\u003e 1, ym3sb4c68t -\u003e 1, toh -\u003e 1, serma -\u003e 1, seberangnya -\u003e 1, solusi -\u003e 5, kawal -\u003e 1, pas -\u003e 2, perusahaan -\u003e 3..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://localhost:41461/jobs"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670178633498_1804864189",
+      "id": "paragraph_1670178633498_1804864189",
+      "dateCreated": "2022-12-04 18:30:33.498",
+      "dateStarted": "2022-12-04 19:39:23.379",
+      "dateFinished": "2022-12-04 19:39:25.941",
+      "status": "FINISHED"
+    },
+    {
+      "title": "",
+      "text": "val priorityQueue \u003d {\n    implicit val ord: Ordering[String] \u003d Ordering.by(cms.frequency(_).estimate)\n    new collection.mutable.PriorityQueue()\n}\npriorityQueue.enqueue(cms.heavyHitters.toSeq:_*)\n\nprintln(\"%table\\nelement\\tfrequency estimate\")\nfor (elem \u003c- priorityQueue.dequeueAll) {\n    printf(\"%s\\t%s\\n\", elem, cms.frequency(elem).estimate)\n}",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:46:07.987",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "element": "string",
+                      "frequency estimate": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "element\tfrequency estimate\nppkm\t138\nmikro\t111\ncovid\t93\ndan\t89\nco\t85\nt\t84\nhttps\t83\ndi\t79\nppkmmikro\t73\n19\t70\nmasyarakat\t66\nyg\t60\nkegiatan\t44\npembatasan\t43\nperpanjangan\t42\nrt\t34\nada\t34\nyang\t32\nberbasis\t31\nmaret\t28\n2021\t28\nuntuk\t27\nhumas\t27\npsbb\t25\njogja\t25\njogjaistimewa\t25\npak\t24\nini\t22\npemberlakukan\t21\njogjaelinglanwaspada\t21\n\u001b[1m\u001b[34mpriorityQueue\u001b[0m: \u001b[1m\u001b[32mscala.collection.mutable.PriorityQueue[String]\u001b[0m \u003d PriorityQueue()\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670178751837_1097764424",
+      "id": "paragraph_1670178751837_1097764424",
+      "dateCreated": "2022-12-04 18:32:31.837",
+      "dateStarted": "2022-12-04 19:46:03.392",
+      "dateFinished": "2022-12-04 19:46:03.936",
+      "status": "FINISHED"
+    },
+    {
+      "text": "cms.heavyHitters.size",
+      "user": "anonymous",
+      "dateUpdated": "2022-12-04 19:47:58.803",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres73\u001b[0m: \u001b[1m\u001b[32mInt\u001b[0m \u003d 30\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670178836892_665026581",
+      "id": "paragraph_1670178836892_665026581",
+      "dateCreated": "2022-12-04 18:33:56.893",
+      "dateStarted": "2022-12-04 19:47:58.807",
+      "dateFinished": "2022-12-04 19:47:59.274",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "Probabilistic",
+  "id": "2HNXTV32K",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

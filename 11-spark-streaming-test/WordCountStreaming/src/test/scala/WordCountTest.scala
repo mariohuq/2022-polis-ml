@@ -10,7 +10,7 @@ class WordCountTest extends TestSuiteBase {
         Seq("a", "a"),
         Seq("a a", "a"),
         Seq("a", "b"),
-        Seq("a", "a b", "b")
+        Seq("a", "a   b", "b")
       ),
       (s: DStream[String]) => WordCount(s),
       Seq(
